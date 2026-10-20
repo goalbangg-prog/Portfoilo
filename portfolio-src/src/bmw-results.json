@@ -1,0 +1,7 @@
+[
+{"id":"520i","name":"520i","group":"daily","body":11.1,"battery":0,"fuel_supply":9.690819834710744,"elec_supply":0,"tailpipe":35.308712958677695,"eol":0.6,"total":56.69953279338844,"per_km_g":283.4976639669422},
+{"id":"530e","name":"530e","group":"daily","body":12.320244040862656,"battery":1.879755959137343,"fuel_supply":5.655408088495575,"elec_supply":15.036612499999999,"tailpipe":20.605602443008852,"eol":0.6,"total":56.097623031504426,"per_km_g":280.48811515752215},
+{"id":"i5_40","name":"i5 eDrive40","group":"daily","body":11.651850170261065,"battery":5.348149829738935,"fuel_supply":0,"elec_supply":22.989565217391306,"tailpipe":0,"eol":0.6,"total":40.5895652173913,"per_km_g":202.94782608695652},
+{"id":"M5","name":"M5","group":"performance","body":14.745612939841088,"battery":1.879755959137343,"fuel_supply":7.430943186046511,"elec_supply":17.82117037037037,"tailpipe":27.074803210000002,"eol":0.6,"total":69.55228566539532,"per_km_g":347.7614283269766},
+{"id":"i5_M60","name":"i5 M60","group":"performance","body":12.464506242905788,"battery":5.348149829738935,"fuel_supply":0,"elec_supply":27.11589743589744,"tailpipe":0,"eol":0.6,"total":45.52855350854217,"per_km_g":227.64276754271083}
+]
