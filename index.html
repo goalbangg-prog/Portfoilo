@@ -62,8 +62,18 @@ main{margin-left:210px}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{font-size:13.5px;font-weight:600;padding:4px 11px;border-radius:7px;border:1px solid var(--line-2);background:#fff;color:var(--ink-2)}
 .chip.p{background:var(--blue-soft);border-color:#c9d8ff;color:var(--blue)}
-.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.certs .chip b{color:var(--sky-d);font-weight:800;margin-right:6px}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cert-col{border:1px solid var(--line);border-radius:14px;padding:16px 20px;background:var(--soft)}
+.cert-col h5{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--ink-3);margin-bottom:6px}
+.cert-col .row{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:baseline;padding:8px 0;border-top:1px solid var(--line)}
+.cert-col .row:first-of-type{border-top:0}
+.cert-col .d{font-size:13px;font-weight:800;color:var(--sky-d)}
+.cert-col b{font-size:15px;font-weight:700;color:var(--ink)}
+.cert-col small{font-size:12.5px;color:var(--ink-3);text-align:right}
+.skills-title + .certs{margin-top:0}
+.case b{display:block;margin-bottom:6px}
+.case ol{padding-left:18px}
+.case ol li{margin-top:3px}
 
 /* ---------- PROJECT ---------- */
 .project-layout{display:grid;grid-template-columns:470px 1fr;gap:48px;align-items:center}
@@ -144,7 +154,7 @@ main{margin-left:210px}
 .admin-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
 .admin-head span{font-size:17px;font-weight:900}
 .admin-head small{font-size:13px;color:var(--ink-3);font-weight:600}
-.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.phases{display:grid;grid-template-columns:.85fr .85fr 1.5fr;gap:12px}
 .phase{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
 .phase.hl{border-color:#bae6fd;background:#f4fbff}
 .ph{font-size:13px;font-weight:900;letter-spacing:.06em;color:var(--blue-2);margin-bottom:10px}
@@ -237,7 +247,7 @@ main{margin-left:210px}
         <div class="kname">김수현</div>
         <div class="ename">Kim Su Hyun</div>
         <div class="role">Climate Change · GHG Data · LCA</div>
-        <p class="intro">근거 있는 기후·환경 데이터를 선별하여, 기후변화 연구용역을 수행합니다.<br><b>숫자를 쓰기 전에, 숫자의 출처부터 확인합니다.</b></p>
+        <p class="intro">근거 있는 기후·환경 데이터를 선별하여, 기후변화 연구용역을 수행합니다.<br><b>데이터를 사용하기 전에, 데이터의 출처부터 확인합니다.</b></p>
       </div>
     </div>
 
@@ -270,20 +280,27 @@ main{margin-left:210px}
 
     <div class="skills-title">SKILLS &amp; TOOLS</div>
     <div class="skills">
-      <div class="skill"><h5>기후변화</h5><div class="chips"><span class="chip p">온실가스 배출량 산정</span><span class="chip">LCA·Scope 3</span><span class="chip">배출권거래제</span><span class="chip">회피배출</span><span class="chip">LCI DB</span><span class="chip">LEAP</span><span class="chip">openLCA 예제</span></div></div>
+      <div class="skill"><h5>기후변화</h5><div class="chips"><span class="chip p">온실가스 배출량 산정</span><span class="chip">LCA</span><span class="chip">Scope 3</span><span class="chip">배출권거래제</span><span class="chip">회피배출</span><span class="chip">LCI DB</span><span class="chip">LEAP</span><span class="chip">openLCA</span></div></div>
       <div class="skill"><h5>DATA &amp; DEVELOPMENT</h5><div class="chips"><span class="chip p">Python</span><span class="chip p">Pandas</span><span class="chip p">NumPy</span><span class="chip p">NetMiner</span><span class="chip">Matplotlib</span><span class="chip">Scikit-learn</span><span class="chip">Excel</span><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">React</span></div></div>
       <div class="skill"><h5>AI &amp; AUTOMATION</h5><div class="chips"><span class="chip p">n8n</span><span class="chip p">Google Opal</span><span class="chip">GPT</span><span class="chip p">Claude</span><span class="chip">Gemini</span><span class="chip">LangChain</span><span class="chip">Suno</span><span class="chip">Google Slides</span><span class="chip">Render</span><span class="chip">Streamlit</span><span class="chip">GitHub Pages</span></div></div>
       <div class="skill"><h5>COLLABORATION</h5><div class="chips"><span class="chip p">Notion</span><span class="chip p">Slack</span></div></div>
     </div>
+    <div class="skills-title">CERTIFICATES &amp; AWARDS</div>
     <div class="certs">
-      <span class="chip"><b>2023.02</b>온실가스관리기사</span>
-      <span class="chip"><b>2022.08</b>온실가스관리 전문인력 양성과정 최우수상</span>
-      <span class="chip"><b>2023.06</b>TOEIC 885</span>
-      <span class="chip"><b>2022.05</b>탄소중립 도민참여 자문단</span>
-      <span class="chip"><b>2022.07</b>복수전공 수기 공모전 우수상</span>
-      <span class="chip"><b>2022.08</b>HALLYM-ODA 서포터즈 최우수상</span>
-      <span class="chip"><b>2023.03</b>사회복지사 1급</span>
-      <span class="chip"><b>2019.12</b>컴퓨터활용능력 2급</span>
+      <div class="cert-col">
+        <h5>자격·어학</h5>
+        <div class="row"><span class="d">2023.02</span><b>온실가스관리기사</b><small>한국산업인력공단</small></div>
+        <div class="row"><span class="d">2023.06</span><b>TOEIC 885</b><small>ETS</small></div>
+        <div class="row"><span class="d">2023.03</span><b>사회복지사 1급</b><small>한국사회복지사협회</small></div>
+        <div class="row"><span class="d">2019.12</span><b>컴퓨터활용능력 2급</b><small>대한상공회의소</small></div>
+      </div>
+      <div class="cert-col">
+        <h5>수상·활동</h5>
+        <div class="row"><span class="d">2022.08</span><b>온실가스관리 전문인력 양성과정 최우수상</b><small>한국환경공단</small></div>
+        <div class="row"><span class="d">2022.08</span><b>HALLYM-ODA 3기 서포터즈 최우수상</b><small>한림대 글로벌사회공헌연구소</small></div>
+        <div class="row"><span class="d">2022.07</span><b>복수전공 수기 공모전 우수상</b><small>한림대학교 교무처</small></div>
+        <div class="row"><span class="d">2022.05</span><b>탄소중립 도민참여 자문단 위촉</b><small>한국기후변화연구원</small></div>
+      </div>
     </div>
   </div>
 </section>
@@ -295,7 +312,7 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 01 · PERSONAL PROJECT · 2026</div>
       <h3 class="project-title">BMW 5시리즈<br>생애주기 온실가스 분석</h3>
       <div class="stack-line">Python + Pandas + 국가 LCI DB + GHG Protocol + WBCSD</div>
-      <p class="project-desc">차 한 대가 만들어져 달리고 폐차될 때까지의 온실가스를 계산하고, 그 결과를 Scope 3와 회피배출로 이어봤습니다.</p>
+      <p class="project-desc">BMW 5시리즈의 생애주기 온실가스 배출량을 계산하고,<br>그 결과를 Scope 3와 회피배출 관점에서 분석했습니다.</p>
       <div class="figures">
         <div class="fig"><div class="n">−28<small>%</small></div><div class="l">i5 생애주기 배출<br>(520i 대비)</div></div>
         <div class="fig"><div class="n">31.5<small>만 t</small></div><div class="l">Scope 3 Cat 11<br>(2025 상반기 판매분)</div></div>
@@ -332,7 +349,7 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 02 · DATA ANALYSIS · 2026</div>
       <h3 class="project-title">EPD 평가계수<br>398건 점검</h3>
       <div class="stack-line">Python + Pandas + SciPy + JavaScript</div>
-      <p class="project-desc">KEITI의 2021년 EPD 평가계수를 전수 점검해, 원본 대조가 필요한 값을 찾았습니다.</p>
+      <p class="project-desc">KEITI의 2021년 EPD 평가계수를 전수 점검해,<br>원본 대조가 필요한 값을 찾았습니다.</p>
       <div class="figures">
         <div class="fig"><div class="n">398<small>건</small></div><div class="l">평가계수<br>전수 점검</div></div>
         <div class="fig"><div class="n">6<small>건</small></div><div class="l">다시 확인할 값<br>발견</div></div>
@@ -369,16 +386,16 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 03 · RESEARCH SERVICE · 2025</div>
       <h3 class="project-title">기상청 2025년<br>IPCC 대응 방안 연구</h3>
       <div class="stack-line">세종대학교 기후환경융합센터 · 연구원</div>
-      <p class="project-desc">기후변화 공공 연구용역의 제안서 작성부터 수행 문서, 발주처 협의까지 맡았습니다.</p>
+      <p class="project-desc">제안서 작성, 나라장터 입찰, 계약, 수행까지<br>폭넓은 연구행정 실무를 경험했습니다.</p>
       <ul class="point-box">
         <li>기술제안서·견적서·사업비 산출내역서 작성</li>
         <li>착수보고 자료·사업수행상황보고서·회의록 작성</li>
         <li>국내 IPCC 주저자 <b>인터뷰 진행</b> · 기상청 블로그 게시</li>
-        <li>IPCC 주저자 4명의 <b>국외출장 항공권 지원</b></li>
+        <li>IPCC 주저자 <b>국외출장 지원</b></li>
       </ul>
       <dl class="info-box"><dt>발주</dt><dd>기상청</dd><dt>역할</dt><dd>연구원</dd><dt>기간</dt><dd>2025</dd></dl>
       <div class="insight">💡 규정을 지키면서 근거를 찾아 합의점을 만드는 법을 배웠습니다.</div>
-      <div class="btns"><a class="btn primary" href="https://blog.naver.com/kma_131/223896576766" target="_blank" rel="noopener">IPCC 전문가 인터뷰 ① →</a><a class="btn" href="https://blog.naver.com/kma_131/223896577818" target="_blank" rel="noopener">IPCC 전문가 인터뷰 ②</a></div>
+      <div class="btns"><a class="btn primary" href="https://blog.naver.com/kma_131/223896576766" target="_blank" rel="noopener">IPCC 전문가 인터뷰 ① →</a><a class="btn primary" href="https://blog.naver.com/kma_131/223896577818" target="_blank" rel="noopener">IPCC 전문가 인터뷰 ② →</a></div>
     </div>
     <div class="admin fade">
       <div class="admin-head"><span>연구용역 업무 기록</span><small>제안 → 수행 → 협의</small></div>
@@ -393,15 +410,23 @@ main{margin-left:210px}
         </div>
         <div class="phase hl">
           <div class="ph">03 협의</div>
-          <ul class="docs"><li>주저자 4명 국외출장 항공권 지원</li><li>공무원 여비 규정 검토</li></ul>
-          <p class="case"><b>두바이 체류 일정</b>이 포함된 출장은 IRENA 담당관 면담 일정을 근거로 업무 관련성을 정리해 기상청과 협의했고, 예외 적용을 받았습니다.</p>
+          <ul class="docs"><li>IPCC 주저자 국외출장 지원</li></ul>
+          <div class="case"><b>두바이 체류 일정 협의</b>
+            <ol>
+              <li>SR Cities 주저자의 LAM-2 회의 출장에 회의와 별도인 두바이 체류 일정이 포함됨</li>
+              <li>기상청 여비 규정상 항공료 지원이 가능한지 다시 검토해야 하는 상황</li>
+              <li>항공권 구매 방식, 일정과 업무 목적의 연관성, 정산 시 문제를 내부에서 검토</li>
+              <li>주저자가 두바이에서 IRENA 담당관과 IPCC 보고서를 협의할 예정임을 확인</li>
+              <li>이를 근거로 업무 관련성을 정리해 기상청과 협의 → 예외 적용, 두바이 체류를 포함한 항공권 전체 지원</li>
+            </ol>
+          </div>
         </div>
       </div>
       <div class="admin-head" style="margin-top:26px"><span>같은 기간 맡은 연구·행정 실무</span><small>2024.11–2025.07</small></div>
       <div class="others">
-        <div><h5>광진 환경교육센터 운영 용역</h5><p>계약서와 선금신청서의 착수일 불일치를 발견해 구청 기준대로 수정·재제출, 나라장터 선금 수납의뢰 완료</p></div>
-        <div><h5>기후변화특성화대학원 사업</h5><p>연구사업비 집행·예산안, 참여율에 따른 학생인건비, 분기별 사업수행상황보고서</p></div>
-        <div><h5>(사)한국기후환경원 법인행정</h5><p>연구용역 입찰·계약, MOU, 세금계산서·기부금영수증, 소득세 신고, 비영리법인 결산</p></div>
+        <div><h5>광진 환경교육센터 운영 용역</h5><p>계약서·선금신청서 착수일 불일치 발견<br>구청 기준대로 수정·재제출<br>나라장터 선금 수납의뢰 완료</p></div>
+        <div><h5>기후변화특성화대학원 사업</h5><p>연구사업비 집행·예산안 수립<br>참여율에 따른 학생인건비 관리<br>분기별 사업수행상황보고서</p></div>
+        <div><h5>(사)한국기후환경원 법인행정</h5><p>연구용역 입찰·계약, MOU 주관<br>세금계산서·기부금영수증, 소득세 신고<br>비영리법인 결산자료 작성</p></div>
       </div>
     </div>
   </div>
@@ -414,7 +439,7 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 04 · AUTOMATION · 2026</div>
       <h3 class="project-title">K-ETS Compliance<br>&amp; Cost Optimizer</h3>
       <div class="stack-line">n8n + JavaScript + Google Drive + Google Docs + AI</div>
-      <p class="project-desc">배출권을 살지, 직접 감축할지 비용을 비교해 최소 이행비용을 찾고, 결과를 보고서로 자동 생성합니다.</p>
+      <p class="project-desc">배출권 구입과 감축기술 개발을 비교하여 최소 이행비용을 찾고,<br>의사결정 보고서를 자동으로 생성합니다.</p>
       <div class="figures">
         <div class="fig"><div class="n">5<small>개</small></div><div class="l">비교 시나리오</div></div>
         <div class="fig"><div class="n">3.6<small>억 원</small></div><div class="l">시나리오 간<br>이행비용 차이</div></div>
@@ -426,7 +451,7 @@ main{margin-left:210px}
         <li>AI는 계산 결과 설명만 → Google Docs 보고서</li>
       </ul>
       <dl class="info-box"><dt>형태</dt><dd>n8n 워크플로 MVP (가상 기업 데이터)</dd><dt>역할</dt><dd>1인 설계·구현</dd></dl>
-      <div class="insight">💡 법적 조건과 경제 가정을 분리해야 계산 결과를 믿을 수 있습니다.</div>
+      <div class="insight">💡 배출권거래제, 할당계획, 배출권의 빈티지, 한계감축비용(MAC)을 모두 고려했습니다.</div>
       <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/K-ETS-Compliance-Cost-Optimizer-3cca892fe8d6813d879ce97daea02eef" target="_blank" rel="noopener">Notion 보기 →</a></div>
     </div>
     <div class="project-visual fade">
@@ -450,10 +475,10 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 05 · AI TOOL · 2026</div>
       <h3 class="project-title">NGMS Manual Copilot</h3>
       <div class="stack-line">Google Opal + Gemini 3 Flash + Excel + Markdown</div>
-      <p class="project-desc">국가온실가스종합관리시스템(NGMS) 사용법을 물으면, 메뉴 경로와 근거 페이지까지 답하는 업무 안내 도구입니다.</p>
+      <p class="project-desc">국가온실가스종합관리시스템(NGMS) 사용법을 물으면,<br>메뉴 경로와 업무 시 주의사항까지 알려주는 도구입니다.</p>
       <div class="figures">
         <div class="fig"><div class="n">654<small>건</small></div><div class="l">공식 매뉴얼 5종으로<br>만든 Q&amp;A</div></div>
-        <div class="fig"><div class="n">476<small>건</small></div><div class="l">검수를 통과한<br>지식만 연결</div></div>
+        <div class="fig"><div class="n">476<small>건</small></div><div class="l">검수를 통과한<br>Q&amp;A 데이터만 연결</div></div>
       </div>
       <ul class="point-box">
         <li>PDF를 질문·답변·메뉴 경로·출처 페이지로 <b>구조화</b></li>
