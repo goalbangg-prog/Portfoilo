@@ -1,6 +1,0 @@
-node_modules/
-portfolio-src/dist/
-.env
-.env.*
-!.env.example
-.DS_Store
