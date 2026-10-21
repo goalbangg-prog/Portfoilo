@@ -2,7 +2,7 @@
 
 기후·온실가스 분야 취업용 웹 포트폴리오입니다.
 
-**웹페이지: https://goalbangg-prog.github.io/Portfoilo/**
+**웹페이지: https://goalbangg-prog.github.io/Portfoilo/** <br>
 **온실가스관리 전문인력 양성과정 최우수상 인터뷰 : https://blog.naver.com/hallymde1330/222937049921**
 - `index.html` 한 파일(순수 HTML·CSS·JavaScript)과 `img/` 폴더로 구성
 - 배경 사진: Unsplash 무료 라이선스 이미지
