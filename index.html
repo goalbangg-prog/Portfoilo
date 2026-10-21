@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>김수현 Portfolio</title>
 <meta name="description" content="기후변화·온실가스 데이터 분석 포트폴리오 · 김수현">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://goalbangg-prog.github.io/Portfoilo/">
+<meta property="og:title" content="김수현 Portfolio">
+<meta property="og:description" content="기후변화·온실가스 데이터 분석 포트폴리오">
+<meta property="og:image" content="https://goalbangg-prog.github.io/Portfoilo/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
@@ -180,12 +188,15 @@ main{margin-left:210px}
 .quad{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .quad figure{margin:0}
 .quad figcaption{font-size:13.5px;font-weight:700;color:var(--ink-2);margin-top:8px;text-align:center}
-.pair2,.pair3{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line);height:280px}
-.pair2>.th,.pair3>.th{aspect-ratio:auto;height:280px;min-width:0}
-.pair2>.th,.pair3>.th{overflow:hidden;padding:0;display:block;position:relative}
-.pair2>.th img,.pair3>.th img{position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important;border-radius:0!important;object-fit:cover!important;object-position:left top!important}
-.pair2>.th.n8n img,.pair3>.th.n8n img{object-fit:contain!important;object-position:center!important}
-#tire-form img{object-position:center top!important}
+.nflow{display:grid;grid-template-rows:250px 112px;gap:1px;background:var(--line)}
+.nflow .ftop{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line)}
+.nflow .ft{position:relative;overflow:hidden;background:#1b1a1f;cursor:zoom-in;min-width:0}
+.nflow .ft.light{background:#f8fafc}
+.nflow .ft img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
+.nflow .ft.light img{object-position:center top}
+.nflow .ft.fband{background:#171717}
+.nflow .ft.fband img{object-fit:contain;object-position:center;padding:14px 18px 26px}
+.nflow .ft span{position:absolute;left:10px;bottom:8px;font-size:11.5px;font-weight:800;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
 .card .th.light{background:#f8fafc;position:relative;display:grid;place-items:center}
 .card .th.light img{width:100%;height:100%;object-fit:contain}
 .card .th.light span{position:absolute;left:10px;bottom:8px;font-size:11.5px;font-weight:800;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
@@ -608,18 +619,17 @@ main{margin-left:210px}
     <div class="stack-line">n8n 자동화 · 웹 프로젝트</div>
     <div class="more-grid">
       <div class="card w fade">
-        <div class="pair2">
-          <div class="th discord"><img src="img/road-discord.jpg" alt="디스코드로 자동 전송된 노면 리포트" class="zoom"></div>
-          <div class="th light n8n" id="road-nodes"><img src="img/road-nodes.jpg?v=3" alt="노면 예측 n8n 노드" class="zoom" onerror="this.parentNode.remove()"><span>n8n 노드 4개</span></div>
+        <div class="nflow">
+          <div class="ftop"><div class="ft chat"><img src="img/road-discord.jpg" alt="디스코드로 자동 전송된 노면 리포트" class="zoom"><span>디스코드 자동 전송</span></div></div>
+          <div class="ft fband"><img src="img/road-nodes.jpg?v=5" alt="노면 예측 n8n 노드" class="zoom"><span>n8n 노드 4개</span></div>
         </div>
         <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷·와인딩 코스 노면 예측 자동화</h4><p>매일 오전 6시, 코스 3곳의 날씨로 결빙 가능성을 계산해<br>GO / CAUTION / DON'T GO로 판정하고, 결과를 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d680a6aceaf1ed62951c53" target="_blank" rel="noopener">Notion →</a></div>
       </div>
       <div class="card w fade">
-        <div class="pair3">
-          <div class="th light" id="tire-form"><img src="img/tire-form.jpg?v=3" alt="공기압 계산기 차량 선택 화면" class="zoom" onerror="this.parentNode.remove()"><span>공기압 계산기</span></div>
-          <div class="th discord"><img src="img/tire-discord.jpg" alt="디스코드로 자동 전송된 타이어 리포트" class="zoom"></div>
-          <div class="th light n8n" id="tire-nodes"><img src="img/tire-nodes.jpg?v=4" alt="공기압 자동화 n8n 노드" class="zoom" onerror="this.parentNode.remove()"><span>n8n 노드 5개</span></div>
+        <div class="nflow">
+          <div class="ftop"><div class="ft light"><img src="img/tire-form.jpg?v=3" alt="공기압 계산기 차량 선택 화면" class="zoom"><span>공기압 계산기</span></div><div class="ft"><img src="img/tire-discord.jpg" alt="디스코드로 자동 전송된 타이어 리포트" class="zoom"><span>디스코드 자동 전송</span></div></div>
+          <div class="ft fband"><img src="img/tire-nodes.jpg?v=5" alt="공기압 자동화 n8n 노드" class="zoom"><span>n8n 노드 5개</span></div>
         </div>
         <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷 타이어 공기압 자동화</h4><p>계산기에서 차량·서킷·목표 공기압을 고르면, 노면 온도로 추천 냉간 공기압을 계산해 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d6809b90eee22e41aa4d37" target="_blank" rel="noopener">Notion →</a></div>
