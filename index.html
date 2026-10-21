@@ -138,6 +138,45 @@ main{margin-left:210px}
 .chart-wrap{flex:1;display:flex;align-items:center}
 .chart-wrap svg{width:100%;height:auto}
 
+
+/* admin board (IPCC) */
+.admin{border:1px solid var(--line);border-radius:16px;background:var(--soft);padding:26px 28px}
+.admin-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.admin-head span{font-size:17px;font-weight:900}
+.admin-head small{font-size:13px;color:var(--ink-3);font-weight:600}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.phase{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.phase.hl{border-color:#bae6fd;background:#f4fbff}
+.ph{font-size:13px;font-weight:900;letter-spacing:.06em;color:var(--blue-2);margin-bottom:10px}
+.docs li{list-style:none;display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:var(--ink-2);line-height:1.5;padding:4px 0}
+.docs li::before{content:"";flex:none;width:12px;height:15px;margin-top:3px;border:1.5px solid var(--ink-4);border-radius:2px;background:linear-gradient(var(--ink-4),var(--ink-4)) 2px 4px/6px 1.5px no-repeat,linear-gradient(var(--ink-4),var(--ink-4)) 2px 8px/6px 1.5px no-repeat}
+.case{margin-top:10px;font-size:13.5px;color:var(--sky-ink);background:var(--sky-soft);border-radius:8px;padding:10px 12px;line-height:1.55}
+.others{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.others>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.others h5{font-size:15px;line-height:1.4}
+.others p{font-size:13.5px;color:var(--ink-2);margin-top:6px;line-height:1.55}
+
+/* multi-image visuals */
+.screen.free{aspect-ratio:auto;background:#fff}
+.screen.free img{width:100%;height:auto;cursor:zoom-in}
+.screen.fixed{aspect-ratio:4/3;background:#fff}
+.screen.fixed img,.screen.tall img,.screen.w2 img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.screen.tall{aspect-ratio:auto;height:560px}
+.screen.dark{background:#111418}
+.screen.w2{aspect-ratio:2/1;background:#0f172a}
+.chartbox{display:flex;align-items:center;padding:22px}
+.chartbox svg{width:100%;height:auto}
+.duo{display:grid;gap:16px;margin-top:16px}
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.quad figure{margin:0}
+.quad figcaption{font-size:13.5px;font-weight:700;color:var(--ink-2);margin-top:8px;text-align:center}
+.pair2,.pair3{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line)}
+.card .th.light{background:#f8fafc;position:relative;display:grid;place-items:center}
+.card .th.light img{width:100%;height:100%;object-fit:contain}
+.card .th.light span{position:absolute;left:10px;bottom:8px;font-size:11.5px;font-weight:800;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
+.card .th.empty img{display:none}
+.card .th.empty::before{content:"이미지 준비 중";font-size:13px;color:var(--ink-4)}
+
 /* more */
 .more-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:30px}
 .card{grid-column:span 2;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
@@ -198,7 +237,7 @@ main{margin-left:210px}
         <div class="kname">김수현</div>
         <div class="ename">Kim Su Hyun</div>
         <div class="role">Climate Change · GHG Data · LCA</div>
-        <p class="intro">기후변화 연구용역 실무를 경험했고, 공개된 기후·환경 데이터를 직접 받아 계산합니다.<br><b>숫자를 쓰기 전에, 그 숫자가 어디서 왔는지 먼저 확인합니다.</b></p>
+        <p class="intro">근거 있는 기후·환경 데이터를 선별하여, 기후변화 연구용역을 수행합니다.<br><b>숫자를 쓰기 전에, 숫자의 출처부터 확인합니다.</b></p>
       </div>
     </div>
 
@@ -215,7 +254,7 @@ main{margin-left:210px}
         <h4>EDUCATION</h4>
         <dl class="kv">
           <dt>학교</dt><dd>한림대학교 졸업 (2023.02)<small>기후변화융합전공 복수전공(2021~) · 사회복지학</small></dd>
-          <dt>교육</dt><dd>온실가스관리 전문인력 양성과정<small>한국환경공단 · 2022.06–08 · 최우수상</small></dd>
+          <dt>수료</dt><dd>온실가스관리 전문인력 양성과정<small>한국환경공단 · 2022.06–08 · 최우수상</small></dd>
           <dt>수료</dt><dd>생성형 AI 마스터 클래스(KDT)<small>동아일보 그룹 · 2026.07–11</small></dd>
         </dl>
       </div>
@@ -223,7 +262,7 @@ main{margin-left:210px}
         <h4>EXPERIENCE</h4>
         <dl class="kv">
           <dt>연구원</dt><dd>세종대학교 기후환경융합센터<small>2024.11–2025.07 · IPCC 대응 방안 연구, 기후변화특성화대학원 사업</small></dd>
-          <dt>행정실장</dt><dd>(사)한국기후환경원 총무위원회<small>같은 기간 봉사직 · 연구용역 계약, 세무, 비영리 결산</small></dd>
+          <dt>행정실장</dt><dd>(사)한국기후환경원 총무위원회<small>2024.11–2025.07 · 봉사직 · 연구용역 계약, 세무, 비영리 결산</small></dd>
           <dt>사회복지</dt><dd>성동지역아동복지센터<small>2025.07–2026.05 · 운영계획·결과보고서, 공문·기안</small></dd>
         </dl>
       </div>
@@ -233,7 +272,7 @@ main{margin-left:210px}
     <div class="skills">
       <div class="skill"><h5>기후변화</h5><div class="chips"><span class="chip p">온실가스 배출량 산정</span><span class="chip">LCA·Scope 3</span><span class="chip">배출권거래제</span><span class="chip">회피배출</span><span class="chip">LCI DB</span><span class="chip">LEAP</span><span class="chip">openLCA 예제</span></div></div>
       <div class="skill"><h5>DATA &amp; DEVELOPMENT</h5><div class="chips"><span class="chip p">Python</span><span class="chip p">Pandas</span><span class="chip p">NumPy</span><span class="chip p">NetMiner</span><span class="chip">Matplotlib</span><span class="chip">Scikit-learn</span><span class="chip">Excel</span><span class="chip">HTML / CSS</span><span class="chip">JavaScript</span><span class="chip">React</span></div></div>
-      <div class="skill"><h5>AI &amp; AUTOMATION</h5><div class="chips"><span class="chip p">n8n</span><span class="chip p">Google Opal</span><span class="chip">GPT</span><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">LangChain</span><span class="chip">Suno</span><span class="chip">Google Slides</span><span class="chip">Render</span><span class="chip">Streamlit</span><span class="chip">GitHub Pages</span></div></div>
+      <div class="skill"><h5>AI &amp; AUTOMATION</h5><div class="chips"><span class="chip p">n8n</span><span class="chip p">Google Opal</span><span class="chip">GPT</span><span class="chip p">Claude</span><span class="chip">Gemini</span><span class="chip">LangChain</span><span class="chip">Suno</span><span class="chip">Google Slides</span><span class="chip">Render</span><span class="chip">Streamlit</span><span class="chip">GitHub Pages</span></div></div>
       <div class="skill"><h5>COLLABORATION</h5><div class="chips"><span class="chip p">Notion</span><span class="chip p">Slack</span></div></div>
     </div>
     <div class="certs">
@@ -264,7 +303,7 @@ main{margin-left:210px}
       </div>
       <ul class="point-box">
         <li><b>생애주기 경계</b> 설정: 20만 km 주행, 제조부터 폐차까지</li>
-        <li>국가 LCI DB 데이터셋을 IPCC 6차 기준으로 재계산</li>
+        <li>국가 LCI DB를 사용하여 생애주기 배출량을 산정</li>
         <li>생애주기 단계를 <b>Scope 3</b> Cat 1·4·11·12로 배분</li>
         <li>WBCSD 지침으로 <b>회피배출</b>을 따로 산정</li>
       </ul>
@@ -293,7 +332,7 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 02 · DATA ANALYSIS · 2026</div>
       <h3 class="project-title">EPD 평가계수<br>398건 점검</h3>
       <div class="stack-line">Python + Pandas + SciPy + JavaScript</div>
-      <p class="project-desc">환경성적표지 계산에 그대로 곱해 쓰는 배경 데이터(평가계수)를 전수 점검해, 원본 대조가 필요한 값을 찾았습니다.</p>
+      <p class="project-desc">KEITI의 2021년 EPD 평가계수를 전수 점검해, 원본 대조가 필요한 값을 찾았습니다.</p>
       <div class="figures">
         <div class="fig"><div class="n">398<small>건</small></div><div class="l">평가계수<br>전수 점검</div></div>
         <div class="fig"><div class="n">6<small>건</small></div><div class="l">다시 확인할 값<br>발견</div></div>
@@ -307,10 +346,10 @@ main{margin-left:210px}
       </ul>
       <dl class="info-box"><dt>기간</dt><dd>2026.10</dd><dt>역할</dt><dd>1인 정제·분석·검산·웹 리포트</dd><dt>스택</dt><dd>Python · SciPy · JavaScript · GitHub Pages</dd></dl>
       <div class="insight">💡 배경 데이터를 그대로 믿으면 결과 전체가 흔들립니다. 계산보다 데이터 확인이 먼저입니다.</div>
-      <div class="btns"><a class="btn primary" href="https://goalbangg-prog.github.io/Beyond-Carbon/" target="_blank" rel="noopener">분석 리포트 보기 →</a><a class="btn" href="https://github.com/goalbangg-prog/Beyond-Carbon" target="_blank" rel="noopener">GitHub</a></div>
+      <div class="btns"><a class="btn primary" href="https://goalbangg-prog.github.io/EPD-Data-Analysis/" target="_blank" rel="noopener">분석 리포트 보기 →</a><a class="btn" href="https://github.com/goalbangg-prog/EPD-Data-Analysis" target="_blank" rel="noopener">GitHub</a></div>
     </div>
     <div class="project-visual fade">
-      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>goalbangg-prog.github.io/Beyond-Carbon</span></div>
+      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>goalbangg-prog.github.io/EPD-Data-Analysis</span></div>
         <div class="screen">
           <div class="shot active"><img src="img/epd-hero.jpg" alt="EPD 리포트 메인 화면" loading="lazy"></div>
           <div class="shot"><img src="img/epd-c3.jpg" alt="다시 확인할 값" loading="lazy"></div>
@@ -329,46 +368,41 @@ main{margin-left:210px}
     <div class="fade">
       <div class="project-meta">PROJECT 03 · RESEARCH SERVICE · 2025</div>
       <h3 class="project-title">기상청 2025년<br>IPCC 대응 방안 연구</h3>
-      <div class="stack-line">세종대학교 기후환경융합센터 · 실무담당 연구원</div>
-      <p class="project-desc">기후변화 공공 연구용역을 제안서 작성부터 수행, 발주처 협의까지 실무로 맡았습니다.</p>
+      <div class="stack-line">세종대학교 기후환경융합센터 · 연구원</div>
+      <p class="project-desc">기후변화 공공 연구용역의 제안서 작성부터 수행 문서, 발주처 협의까지 맡았습니다.</p>
       <ul class="point-box">
         <li>기술제안서·견적서·사업비 산출내역서 작성</li>
         <li>착수보고 자료·사업수행상황보고서·회의록 작성</li>
         <li>국내 IPCC 주저자 <b>인터뷰 진행</b> · 기상청 블로그 게시</li>
-        <li>주저자 국외출장 여비 규정 협의 → <b>항공권 전액 지원</b></li>
+        <li>IPCC 주저자 4명의 <b>국외출장 항공권 지원</b></li>
       </ul>
-      <dl class="info-box"><dt>발주</dt><dd>기상청</dd><dt>역할</dt><dd>실무담당 연구원</dd><dt>기간</dt><dd>2025</dd></dl>
+      <dl class="info-box"><dt>발주</dt><dd>기상청</dd><dt>역할</dt><dd>연구원</dd><dt>기간</dt><dd>2025</dd></dl>
       <div class="insight">💡 규정을 지키면서 근거를 찾아 합의점을 만드는 법을 배웠습니다.</div>
       <div class="btns"><a class="btn primary" href="https://blog.naver.com/kma_131/223896576766" target="_blank" rel="noopener">IPCC 전문가 인터뷰 ① →</a><a class="btn" href="https://blog.naver.com/kma_131/223896577818" target="_blank" rel="noopener">IPCC 전문가 인터뷰 ②</a></div>
     </div>
-    <div class="project-visual fade">
-      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>2025년 IPCC 대응 방안 연구 · 기상청</span></div>
-        <div class="screen">
-          <div class="shot active"><div class="panel">
-            <h6>PROCESS</h6><h3>연구용역 수행 흐름</h3><div class="sub">제안부터 수행, 발주처 협의까지 맡은 업무</div>
-            <div class="flow c3">
-              <div><div class="k">STEP 1</div><h4>제안·수주</h4><p>정성·정량제안서, 연구 견적서, 사업비 산출내역서</p></div>
-              <div><div class="k">STEP 2</div><h4>수행</h4><p>착수보고회 자료, 사업수행상황보고서, 회의록, 전문가 포럼 운영</p></div>
-              <div class="hl"><div class="k">STEP 3</div><h4>협의</h4><p>주저자 LAM-2(두바이) 출장 여비 규정 검토 → IRENA 면담을 근거로 예외 적용</p></div>
-            </div>
-            <div class="flow c3" style="margin-top:14px">
-              <div style="grid-column:span 3;display:flex;gap:28px;align-items:center;background:#fff">
-                <div class="fig"><div class="n">2<small>편</small></div><div class="l">IPCC 국내 전문가 인터뷰<br>기상청 블로그 게시</div></div>
-                <div class="fig"><div class="n">100<small>%</small></div><div class="l">항공권 지원<br>(예외 적용 결정)</div></div>
-              </div>
-            </div>
-          </div></div>
-          <div class="shot"><div class="panel">
-            <h6>RESEARCH ADMIN</h6><h3>연구·행정 실무</h3><div class="sub">같은 기간 맡은 다른 사업</div>
-            <div class="prac">
-              <div><h4>광진 환경교육센터 운영 용역<small>광진구청 · (사)한국기후환경원</small></h4><p>계약서와 선금신청서의 착수일 불일치를 발견해 구청 기준대로 수정·재제출, 나라장터 선금 수납의뢰 완료</p></div>
-              <div><h4>기후변화특성화대학원 사업<small>세종대 기후환경융합센터 · 환경부</small></h4><p>연구사업비 집행·예산안, 참여율에 따른 학생인건비, 분기별 사업수행상황보고서</p></div>
-              <div><h4>(사)한국기후환경원 법인행정<small>행정실장 · 봉사직</small></h4><p>연구용역 입찰·계약, MOU, 전자세금계산서·기부금영수증, 소득세 신고, 비영리법인 결산</p></div>
-            </div>
-          </div></div>
+    <div class="admin fade">
+      <div class="admin-head"><span>연구용역 업무 기록</span><small>제안 → 수행 → 협의</small></div>
+      <div class="phases">
+        <div class="phase">
+          <div class="ph">01 제안·수주</div>
+          <ul class="docs"><li>정성제안서 (기술제안서)</li><li>정량제안서</li><li>연구 견적서</li><li>사업비 산출내역서</li></ul>
+        </div>
+        <div class="phase">
+          <div class="ph">02 수행</div>
+          <ul class="docs"><li>착수보고회 발표자료</li><li>사업수행상황보고서</li><li>회의록</li><li>IPCC 주저자 인터뷰 원고</li><li>전문가 포럼 운영</li></ul>
+        </div>
+        <div class="phase hl">
+          <div class="ph">03 협의</div>
+          <ul class="docs"><li>주저자 4명 국외출장 항공권 지원</li><li>공무원 여비 규정 검토</li></ul>
+          <p class="case"><b>두바이 체류 일정</b>이 포함된 출장은 IRENA 담당관 면담 일정을 근거로 업무 관련성을 정리해 기상청과 협의했고, 예외 적용을 받았습니다.</p>
         </div>
       </div>
-      <div class="tabs"><button class="tab active">연구 수행 흐름</button><button class="tab">연구·행정 실무</button></div>
+      <div class="admin-head" style="margin-top:26px"><span>같은 기간 맡은 연구·행정 실무</span><small>2024.11–2025.07</small></div>
+      <div class="others">
+        <div><h5>광진 환경교육센터 운영 용역</h5><p>계약서와 선금신청서의 착수일 불일치를 발견해 구청 기준대로 수정·재제출, 나라장터 선금 수납의뢰 완료</p></div>
+        <div><h5>기후변화특성화대학원 사업</h5><p>연구사업비 집행·예산안, 참여율에 따른 학생인건비, 분기별 사업수행상황보고서</p></div>
+        <div><h5>(사)한국기후환경원 법인행정</h5><p>연구용역 입찰·계약, MOU, 세금계산서·기부금영수증, 소득세 신고, 비영리법인 결산</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -396,26 +430,15 @@ main{margin-left:210px}
       <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/K-ETS-Compliance-Cost-Optimizer-3cca892fe8d6813d879ce97daea02eef" target="_blank" rel="noopener">Notion 보기 →</a></div>
     </div>
     <div class="project-visual fade">
-      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>K-ETS Compliance &amp; Cost Optimizer · n8n</span></div>
-        <div class="screen">
-          <div class="shot active"><div class="panel">
-            <h6>WORKFLOW</h6><h3>규정은 표로, 계산은 코드로, 설명만 AI로</h3><div class="sub">n8n 워크플로 전체 흐름</div>
-            <div class="flow c6">
-              <div><div class="k">01</div><h4>기업 데이터 입력</h4><p>배출량·할당량, 감축수단, 시장가격</p><span class="tag">INPUT</span></div>
-              <div><div class="k">02</div><h4>규정 불러오기</h4><p>법령·고시를 Rule Table로 관리</p><span class="tag rule">RULE</span></div>
-              <div><div class="k">03</div><h4>적격성 판정</h4><p>KAU·KCU·KOC 구분, 상쇄 한도</p><span class="tag rule">RULE</span></div>
-              <div><div class="k">04</div><h4>최소비용 조합</h4><p>감축·구매를 원/tCO₂eq로 비교</p><span class="tag code">CODE</span></div>
-              <div><div class="k">05</div><h4>시나리오 5개</h4><p>탄소가격·감축비용·배출량 변화</p><span class="tag code">CODE</span></div>
-              <div class="hl"><div class="k">06</div><h4>AI 설명 → 보고서</h4><p>계산 결과만 설명, Docs 자동 생성</p><span class="tag ai">AI</span></div>
-            </div>
-          </div></div>
-          <div class="shot"><div class="panel">
-            <h6>SCENARIOS</h6><h3>배출이 늘면 이행비용은 기준의 두 배가 됩니다</h3><div class="sub">시나리오별 최소 이행비용(억 원) · 가상 기업 입력</div>
-            <div class="chart-wrap"><svg id="ketsChart" viewBox="0 0 760 300" role="img" aria-label="시나리오별 이행비용"></svg></div>
-          </div></div>
-        </div>
+      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>n8n · 전체 워크플로 노드</span></div>
+        <div class="screen free"><img src="img/kets-workflow.jpg" alt="K-ETS n8n 전체 워크플로 노드" class="zoom"></div>
       </div>
-      <div class="tabs"><button class="tab active">워크플로</button><button class="tab">시나리오 비교</button></div>
+      <div class="duo" style="grid-template-columns:1fr 1fr">
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>Google Docs · 자동 생성 보고서</span></div>
+          <div class="screen fixed"><img src="img/kets-report.jpg" alt="자동 생성된 K-ETS 의사결정 보고서" class="zoom"></div></div>
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>시나리오별 최소 이행비용 (가상 입력)</span></div>
+          <div class="screen fixed chartbox"><svg id="ketsChart" viewBox="0 0 760 300" role="img" aria-label="시나리오별 이행비용"></svg></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -443,13 +466,12 @@ main{margin-left:210px}
       <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/NGMS-Manual-Copilot-3caa892fe8d68127bd0efee6a8ceca75" target="_blank" rel="noopener">Notion 보기 →</a></div>
     </div>
     <div class="project-visual fade">
-      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>NGMS Manual Copilot · Google Opal</span></div>
-        <div class="screen">
-          <div class="shot dark active"><img src="img/ngms-answer.jpg" alt="NGMS Copilot 답변 화면" loading="lazy"></div>
-          <div class="shot dark"><img src="img/ngms-workflow.jpg" alt="Google Opal 구성 화면" loading="lazy"></div>
-        </div>
+      <div class="duo" style="grid-template-columns:.62fr 1fr;margin-top:0">
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>답변 화면</span></div>
+          <div class="screen tall dark"><img src="img/ngms-answer.jpg" alt="NGMS Copilot 답변 화면" class="zoom"></div></div>
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>Google Opal · 노드 구성</span></div>
+          <div class="screen tall dark"><img src="img/ngms-workflow.jpg" alt="Google Opal 노드 구성 화면" class="zoom"></div></div>
       </div>
-      <div class="tabs"><button class="tab active">답변 화면</button><button class="tab">Opal 구성</button></div>
     </div>
   </div>
 </section>
@@ -461,7 +483,7 @@ main{margin-left:210px}
       <div class="project-meta">PROJECT 06 · TEAM PROJECT (2명) · 2026</div>
       <h3 class="project-title">PRESS-CMS</h3>
       <div class="stack-line">React + TypeScript + Supabase + AI API + Render</div>
-      <p class="project-desc">현직 기자 의견을 반영해 만든 기사 작성·검토·출고 시스템입니다. 팀장으로 기획·협업·배포를 맡았습니다.</p>
+      <p class="project-desc">현직 기자 의견을 반영해 만든 기사 작성·검토·출고 시스템입니다. 팀장으로 기획·협업·배포를 맡았고, <b>2026년 11월 13일 완성 예정</b>입니다.</p>
       <div class="figures">
         <div class="fig"><div class="n">12<small>건</small></div><div class="l">현장 의견<br>모두 처리</div></div>
         <div class="fig"><div class="n">34<small>장</small></div><div class="l">실제 구동 화면</div></div>
@@ -471,20 +493,17 @@ main{margin-left:210px}
         <li>협업용 GitHub 저장소 구성, Render 배포</li>
         <li>작업일지 작성, 발표 자료 제작·통합</li>
       </ul>
-      <dl class="info-box"><dt>기간</dt><dd>2026.09 – 2026.10</dd><dt>역할</dt><dd>팀장 · 기획·협업·배포</dd></dl>
+      <dl class="info-box"><dt>기간</dt><dd>2026.09 – 2026.11.13 (완성 예정)</dd><dt>역할</dt><dd>팀장 · 기획·협업·배포</dd></dl>
       <div class="insight">💡 화면은 팀 전체 결과물이며, 기능 구현은 팀원과 나눠 맡았습니다.</div>
       <div class="btns"><a class="btn primary" href="https://goalbangg-prog.github.io/PRESS-CMS-V4/" target="_blank" rel="noopener">발표자료 보기 →</a></div>
     </div>
     <div class="project-visual fade">
-      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>PRESS-CMS · Newsroom Workspace</span></div>
-        <div class="screen">
-          <div class="shot active"><img src="img/press-editor.jpg" alt="기사 편집과 문장별 피드백 화면" loading="lazy"></div>
-          <div class="shot"><img src="img/press-review.jpg" alt="AI 검수 화면" loading="lazy"></div>
-          <div class="shot"><img src="img/press-dash.jpg" alt="대시보드 화면" loading="lazy"></div>
-          <div class="shot"><img src="img/press-hero.jpg" alt="발표자료 첫 화면" loading="lazy"></div>
-        </div>
+      <div class="quad">
+        <figure><div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>발표자료</span></div><div class="screen w2"><img src="img/press-hero.jpg" alt="PRESS-CMS 발표자료" class="zoom"></div></div><figcaption>발표자료</figcaption></figure>
+        <figure><div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>기사 편집</span></div><div class="screen w2"><img src="img/press-editor.jpg" alt="기사 편집과 문장별 피드백" class="zoom"></div></div><figcaption>기사 편집 · 문장별 피드백</figcaption></figure>
+        <figure><div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>AI 검수</span></div><div class="screen w2"><img src="img/press-review.jpg" alt="AI 검수 화면" class="zoom"></div></div><figcaption>AI 검수</figcaption></figure>
+        <figure><div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>대시보드</span></div><div class="screen w2"><img src="img/press-dash.jpg" alt="대시보드 화면" class="zoom"></div></div><figcaption>대시보드</figcaption></figure>
       </div>
-      <div class="tabs"><button class="tab active">기사 편집</button><button class="tab">AI 검수</button><button class="tab">대시보드</button><button class="tab">발표자료</button></div>
     </div>
   </div>
 </section>
@@ -558,29 +577,36 @@ main{margin-left:210px}
     <div class="stack-line">n8n 날씨 자동화 · 웹 개발 학습</div>
     <div class="more-grid">
       <div class="card w fade">
-        <div class="th discord" data-lb="img/road-discord.jpg"><img src="img/road-discord.jpg" alt="노면 예측 디스코드 리포트" loading="lazy"></div>
-        <div class="bd"><div class="m">n8n · Open-Meteo · Discord</div><h4>서킷·와인딩 코스 노면 예측 자동화</h4><p>매일 오전 6시, 코스 3곳의 날씨로 결빙 가능성을 계산해 GO / CAUTION / DON'T GO로 알립니다.</p>
+        <div class="pair2">
+          <div class="th discord"><img src="img/road-discord.jpg" alt="디스코드로 자동 전송된 노면 리포트" class="zoom"></div>
+          <div class="th light" id="road-nodes"><img src="img/road-nodes.jpg" alt="노면 예측 n8n 노드" class="zoom" onerror="this.parentNode.remove()"><span>n8n 노드 4개</span></div>
+        </div>
+        <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷·와인딩 코스 노면 예측 자동화</h4><p>매일 오전 6시, 코스 3곳의 날씨로 결빙 가능성을 계산해 GO / CAUTION / DON'T GO로 판정하고, 결과를 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d680a6aceaf1ed62951c53" target="_blank" rel="noopener">Notion →</a></div>
       </div>
       <div class="card w fade">
-        <div class="th discord" data-lb="img/tire-discord.jpg"><img src="img/tire-discord.jpg" alt="타이어 공기압 디스코드 리포트" loading="lazy"></div>
-        <div class="bd"><div class="m">n8n · Open-Meteo · Discord</div><h4>서킷 타이어 공기압 자동화</h4><p>차량·서킷·목표 공기압을 입력하면 노면 온도로 추천 냉간 공기압을 계산해 보냅니다.</p>
+        <div class="pair3">
+          <div class="th light" id="tire-form"><img src="img/tire-form.jpg" alt="공기압 계산기 차량 선택 화면" class="zoom" onerror="this.parentNode.remove()"><span>공기압 계산기</span></div>
+          <div class="th discord"><img src="img/tire-discord.jpg" alt="디스코드로 자동 전송된 타이어 리포트" class="zoom"></div>
+          <div class="th light" id="tire-nodes"><img src="img/tire-nodes.jpg" alt="공기압 자동화 n8n 노드" class="zoom" onerror="this.parentNode.remove()"><span>n8n 노드 5개</span></div>
+        </div>
+        <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷 타이어 공기압 자동화</h4><p>계산기에서 차량·서킷·목표 공기압을 고르면, 노면 온도로 추천 냉간 공기압을 계산해 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d6809b90eee22e41aa4d37" target="_blank" rel="noopener">Notion →</a></div>
       </div>
       <div class="card fade">
-        <div class="th" data-lb="img/ymg.jpg"><img src="img/ymg.jpg" alt="YMG BEANS 메인 화면" loading="lazy"></div>
+        <div class="th"><img src="img/ymg.jpg" alt="YMG BEANS 메인 화면" class="zoom"></div>
         <div class="bd"><div class="m">REACT</div><h4>YMG BEANS</h4><p>지구본으로 산지를 탐색하는 생두 소개 사이트입니다.</p>
-        <a class="btn" href="https://github.com/goalbangg-prog/YMGBeans" target="_blank" rel="noopener">GitHub →</a></div>
+        <a class="btn" href="https://goalbangg-prog.github.io/YMGBeans/" target="_blank" rel="noopener">웹 보기 →</a></div>
       </div>
       <div class="card fade">
-        <div class="th" data-lb="img/weart.jpg"><img src="img/weart.jpg" alt="위아트 클론 메인 화면" loading="lazy"></div>
+        <div class="th"><img src="img/weart.jpg" alt="위아트 클론 메인 화면" class="zoom"></div>
         <div class="bd"><div class="m">HTML · CSS · JS · 학습용 클론</div><h4>위아트(WeArt) 클론</h4><p>JSON 작품 데이터로 슬라이드와 목록을 구성했습니다.</p>
-        <a class="btn" href="https://github.com/goalbangg-prog/WeArt" target="_blank" rel="noopener">GitHub →</a></div>
+        <a class="btn" href="https://goalbangg-prog.github.io/WeArt/" target="_blank" rel="noopener">웹 보기 →</a></div>
       </div>
       <div class="card fade">
-        <div class="th" data-lb="img/kyobo.jpg"><img src="img/kyobo.jpg" alt="교보문고 클론 메인 화면" loading="lazy"></div>
+        <div class="th"><img src="img/kyobo.jpg" alt="교보문고 클론 메인 화면" class="zoom"></div>
         <div class="bd"><div class="m">KAKAO API · 학습용 클론</div><h4>교보문고 클론</h4><p>Kakao 책 검색 API로 도서 카드와 상세 화면을 만들었습니다.</p>
-        <a class="btn" href="https://github.com/goalbangg-prog/Kyobo-Clone" target="_blank" rel="noopener">GitHub →</a></div>
+        <a class="btn" href="https://goalbangg-prog.github.io/Kyobo-Clone/" target="_blank" rel="noopener">웹 보기 →</a></div>
       </div>
     </div>
   </div>
@@ -609,7 +635,7 @@ main{margin-left:210px}
   /* lightbox */
   const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
   function open(src){ lbImg.src = src; lb.classList.add('open'); }
-  document.querySelectorAll('.shot img').forEach(img => img.addEventListener('click', () => open(img.src)));
+  document.querySelectorAll('.shot img, img.zoom').forEach(img => img.addEventListener('click', () => open(img.src)));
   document.querySelectorAll('[data-lb]').forEach(el => el.addEventListener('click', () => open(el.dataset.lb)));
   lb.addEventListener('click', () => lb.classList.remove('open'));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
