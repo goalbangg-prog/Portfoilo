@@ -180,7 +180,12 @@ main{margin-left:210px}
 .quad{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .quad figure{margin:0}
 .quad figcaption{font-size:13.5px;font-weight:700;color:var(--ink-2);margin-top:8px;text-align:center}
-.pair2,.pair3{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line)}
+.pair2,.pair3{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line);height:280px}
+.pair2>.th,.pair3>.th{aspect-ratio:auto;height:280px;min-width:0}
+.pair2>.th,.pair3>.th{overflow:hidden;padding:0;display:block;position:relative}
+.pair2>.th img,.pair3>.th img{position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important;border-radius:0!important;object-fit:cover!important;object-position:left top!important}
+.pair2>.th.n8n img,.pair3>.th.n8n img{object-fit:contain!important;object-position:center!important}
+#tire-form img{object-position:center top!important}
 .card .th.light{background:#f8fafc;position:relative;display:grid;place-items:center}
 .card .th.light img{width:100%;height:100%;object-fit:contain}
 .card .th.light span{position:absolute;left:10px;bottom:8px;font-size:11.5px;font-weight:800;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
@@ -326,7 +331,7 @@ main{margin-left:210px}
         <li>WBCSD 지침으로 <b>회피배출</b>을 따로 산정</li>
       </ul>
       <dl class="info-box"><dt>기간</dt><dd>2026.10</dd><dt>역할</dt><dd>1인 기획·분석·웹 구현</dd><dt>스택</dt><dd>Python · JavaScript · GitHub Pages</dd></dl>
-      <div class="insight">💡 같은 제품이라도 보고 지침에 따라 배출량이 달라진다는 점을 배웠습니다.</div>
+      <div class="insight">💡 같은 제품이라도 보고 목적에 따라 배출량이 달라집니다.</div>
       <div class="btns"><a class="btn primary" href="https://goalbangg-prog.github.io/BMW-5-series-LCA-SCOPE3-WBCSD/" target="_blank" rel="noopener">웹 리포트 보기 →</a><a class="btn" href="https://github.com/goalbangg-prog/BMW-5-series-LCA-SCOPE3-WBCSD" target="_blank" rel="noopener">GitHub</a></div>
     </div>
     <div class="project-visual fade">
@@ -452,7 +457,7 @@ main{margin-left:210px}
         <li>AI는 계산 결과 설명만 → Google Docs 보고서</li>
       </ul>
       <dl class="info-box"><dt>형태</dt><dd>n8n 워크플로 MVP (가상 기업 데이터)</dd><dt>역할</dt><dd>1인 설계·구현</dd></dl>
-      <div class="insight">💡 배출권거래제, 할당계획, 배출권의 빈티지, 한계감축비용(MAC)을 모두 고려했습니다.</div>
+      <div class="insight">💡 배출권거래제, 할당계획, 배출권의 빈티지, 한계감축비용을 모두 고려했습니다.</div>
       <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/K-ETS-Compliance-Cost-Optimizer-3cca892fe8d6813d879ce97daea02eef" target="_blank" rel="noopener">Notion 보기 →</a></div>
     </div>
     <div class="project-visual fade">
@@ -520,7 +525,7 @@ main{margin-left:210px}
         <li>NetMiner4로 LDA 토픽모델링 수행·주제 해석</li>
       </ul>
       <dl class="info-box"><dt>논문</dt><dd>한국기후변화학회지 16권 3-1호, 2025</dd><dt>포스터</dt><dd>2025 한국기후변화학회 상반기 학술대회</dd></dl>
-      <div class="insight">💡 논문의 전처리 이후 데이터 분석은 박사급 연구자인 제1저자가 수행했습니다.</div>
+      <div class="insight">💡 논문의 전처리 이후 데이터 분석은 제1저자가 수행했습니다.</div>
       <div class="btns"><a class="btn primary" href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12267496" target="_blank" rel="noopener">논문 보기 (DBpia) →</a></div>
     </div>
     <div class="project-visual fade">
@@ -549,7 +554,7 @@ main{margin-left:210px}
         <li>2010~2050년 부문별 에너지 수요 전망 확인</li>
       </ul>
       <dl class="info-box"><dt>형태</dt><dd>기후변화모형연구 수업 실습</dd><dt>도구</dt><dd>LEAP</dd></dl>
-      <div class="insight">💡 모형 결과는 소프트웨어보다 변수와 가정을 어떻게 세우느냐에 달려 있습니다.</div>
+      <div class="insight">💡 시나리오 분석은 변수와 가정을 어떻게 세우느냐에 달려 있습니다.</div>
     </div>
     <div class="project-visual fade">
       <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>LEAP · Energy Demand Final Units</span></div>
@@ -607,7 +612,7 @@ main{margin-left:210px}
           <div class="th discord"><img src="img/road-discord.jpg" alt="디스코드로 자동 전송된 노면 리포트" class="zoom"></div>
           <div class="th light n8n" id="road-nodes"><img src="img/road-nodes.jpg?v=3" alt="노면 예측 n8n 노드" class="zoom" onerror="this.parentNode.remove()"><span>n8n 노드 4개</span></div>
         </div>
-        <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷·와인딩 코스 노면 예측 자동화</h4><p>매일 오전 6시, 코스 3곳의 날씨로 결빙 가능성을 계산해 GO / CAUTION / DON'T GO로 판정하고, 결과를 <b>디스코드로 자동 전송</b>합니다.</p>
+        <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷·와인딩 코스 노면 예측 자동화</h4><p>매일 오전 6시, 코스 3곳의 날씨로 결빙 가능성을 계산해<br>GO / CAUTION / DON'T GO로 판정하고, 결과를 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d680a6aceaf1ed62951c53" target="_blank" rel="noopener">Notion →</a></div>
       </div>
       <div class="card w fade">
