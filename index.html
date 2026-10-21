@@ -188,15 +188,15 @@ main{margin-left:210px}
 .quad{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .quad figure{margin:0}
 .quad figcaption{font-size:13.5px;font-weight:700;color:var(--ink-2);margin-top:8px;text-align:center}
-.nflow{display:grid;grid-template-rows:250px 112px;gap:1px;background:var(--line)}
-.nflow .ftop{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:1px;background:var(--line)}
-.nflow .ft{position:relative;overflow:hidden;background:#1b1a1f;cursor:zoom-in;min-width:0}
-.nflow .ft.light{background:#f8fafc}
-.nflow .ft img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
-.nflow .ft.light img{object-position:center top}
-.nflow .ft.fband{background:#171717}
-.nflow .ft.fband img{object-fit:contain;object-position:center;padding:14px 18px 26px}
-.nflow .ft span{position:absolute;left:10px;bottom:8px;font-size:11.5px;font-weight:800;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
+.ctab{border-bottom:1px solid var(--line);background:#f8fafc}
+.cscreen{position:relative;aspect-ratio:16/9;overflow:hidden}
+.cscreen .shot img{padding:14px}
+.cscreen .shot.chat{background:#1b1a1f}
+.cscreen .shot.n8n{background:#171717}
+.cscreen .shot.n8n img{padding:24px}
+.cscreen .shot.form{background:#fbfcfe}
+.tabs.sm{margin:0;padding:12px;gap:6px}
+.tabs.sm .tab{height:32px;padding:0 14px;font-size:12.5px}
 .card .th.light{background:#f8fafc;position:relative;display:grid;place-items:center}
 .card .th.light img{width:100%;height:100%;object-fit:contain}
 .card .th.light span{position:absolute;left:10px;bottom:8px;font-size:11.5px;font-weight:800;color:var(--ink-3);background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
@@ -619,17 +619,24 @@ main{margin-left:210px}
     <div class="stack-line">n8n 자동화 · 웹 프로젝트</div>
     <div class="more-grid">
       <div class="card w fade">
-        <div class="nflow">
-          <div class="ftop"><div class="ft chat"><img src="img/road-discord.jpg" alt="디스코드로 자동 전송된 노면 리포트" class="zoom"><span>디스코드 자동 전송</span></div></div>
-          <div class="ft fband"><img src="img/road-nodes.jpg?v=5" alt="노면 예측 n8n 노드" class="zoom"><span>n8n 노드 4개</span></div>
+        <div class="ctab">
+          <div class="cscreen">
+            <div class="shot chat active"><img src="img/road-discord.jpg" alt="디스코드로 자동 전송된 노면 리포트"></div>
+            <div class="shot n8n"><img src="img/road-nodes.jpg?v=5" alt="노면 예측 n8n 노드 4개"></div>
+          </div>
+          <div class="tabs sm"><button class="tab active">디스코드 결과</button><button class="tab">n8n 노드</button></div>
         </div>
         <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷·와인딩 코스 노면 예측 자동화</h4><p>매일 오전 6시, 코스 3곳의 날씨로 결빙 가능성을 계산해<br>GO / CAUTION / DON'T GO로 판정하고, 결과를 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d680a6aceaf1ed62951c53" target="_blank" rel="noopener">Notion →</a></div>
       </div>
       <div class="card w fade">
-        <div class="nflow">
-          <div class="ftop"><div class="ft light"><img src="img/tire-form.jpg?v=3" alt="공기압 계산기 차량 선택 화면" class="zoom"><span>공기압 계산기</span></div><div class="ft"><img src="img/tire-discord.jpg" alt="디스코드로 자동 전송된 타이어 리포트" class="zoom"><span>디스코드 자동 전송</span></div></div>
-          <div class="ft fband"><img src="img/tire-nodes.jpg?v=5" alt="공기압 자동화 n8n 노드" class="zoom"><span>n8n 노드 5개</span></div>
+        <div class="ctab">
+          <div class="cscreen">
+            <div class="shot form active"><img src="img/tire-form.jpg?v=3" alt="공기압 계산기 차량 선택 화면"></div>
+            <div class="shot chat"><img src="img/tire-discord.jpg" alt="디스코드로 자동 전송된 타이어 리포트"></div>
+            <div class="shot n8n"><img src="img/tire-nodes.jpg?v=5" alt="공기압 자동화 n8n 노드 5개"></div>
+          </div>
+          <div class="tabs sm"><button class="tab active">공기압 계산기</button><button class="tab">디스코드 결과</button><button class="tab">n8n 노드</button></div>
         </div>
         <div class="bd"><div class="m">n8n · JavaScript · Open-Meteo 날씨 API · Discord</div><h4>서킷 타이어 공기압 자동화</h4><p>계산기에서 차량·서킷·목표 공기압을 고르면, 노면 온도로 추천 냉간 공기압을 계산해 <b>디스코드로 자동 전송</b>합니다.</p>
         <a class="btn" href="https://honeysuckle-rose-a94.notion.site/3c2a892fe8d6809b90eee22e41aa4d37" target="_blank" rel="noopener">Notion →</a></div>
@@ -661,7 +668,7 @@ main{margin-left:210px}
 <script>
 (function(){
   /* image tabs */
-  document.querySelectorAll('.project-visual').forEach(v => {
+  document.querySelectorAll('.project-visual, .ctab').forEach(v => {
     const tabs = [...v.querySelectorAll('.tab')], shots = [...v.querySelectorAll('.shot')];
     tabs.forEach((t,i) => t.addEventListener('click', () => {
       tabs.forEach(x => x.classList.toggle('active', x === t));
