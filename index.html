@@ -631,34 +631,37 @@ main{margin-left:210px}
 <section class="section" id="project6">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 09 · TEAM PROJECT (2명) · 2026</div>
+      <div class="project-meta">PROJECT 09 · TEAM PROJECT (2명) · 2026.09 – 2026.11</div>
       <h3 class="project-title">PRESS-CMS</h3>
-      <div class="stack-line">React + TypeScript + Supabase + Gemini · OpenAI + Render</div>
-      <p class="project-desc">기자 작성 → 데스크 검토 → 부장 출고를 한 곳에서 처리하는<br>사내 기사 작성 프로그램입니다. 현직 기자 의견을 반영했습니다.</p>
+      <div class="stack-line">React 19 + TypeScript + TipTap + Supabase(PostgreSQL · RLS · Edge Functions 12) + Gemini · OpenAI · Claude + Render</div>
+      <p class="project-desc">기자가 쓰고, 데스크가 검토하고, 부장이 출고하는<br>사내 기사 작성 시스템입니다. 현직 기자 의견 12건에서 출발했습니다.</p>
       <div class="figures">
-        <div class="fig"><div class="n">42<small>/48건</small></div><div class="l">기능 시험 통과<br>(10월 19일 기준)</div></div>
-        <div class="fig"><div class="n">67<small>/80개</small></div><div class="l">기능 현황표<br>완료 항목</div></div>
+        <div class="fig"><div class="n">42<small>/48건</small></div><div class="l">기능 시험 통과<br>위험 시험 6건 전부 통과</div></div>
+        <div class="fig"><div class="n">14<small>/14개</small></div><div class="l">작업지시서<br>요구사항 구현</div></div>
+        <div class="fig"><div class="n">78<small>원</small></div><div class="l">기사 1건 AI 비용<br>(실제 호출 기록 기준)</div></div>
       </div>
       <ul class="point-box">
-        <li>작성·검토·출고 단계와 <b>부서·직급별 권한</b> 관리</li>
-        <li>AI 기사 검수 · 인터뷰 초안 · <b>녹음 받아쓰기</b></li>
-        <li>문장 드래그 피드백 · 통합 미디어 라이브러리</li>
-        <li>기능마다 AI(Gemini · OpenAI · Claude) 선택</li>
+        <li>작성 → 검토 → 승인 → 출고 흐름, <b>직급·부서·기사 상태를 DB가 검사</b></li>
+        <li>AI는 질문하고 기자가 답한 사실만으로 초안 조립 · <b>AI 검수</b> · 녹음 받아쓰기 · 인포그래픽</li>
+        <li>워드형 편집기(문단 단위 저장) · 문장별 피드백 카드 · 버전 되돌리기 · 실시간 알림</li>
+        <li>기능마다 AI(Gemini · OpenAI · Claude) 선택, 키는 암호화해 서버에서만 사용</li>
       </ul>
-      <dl class="info-box"><dt>기간</dt><dd>2026.09 – 2026.11.13 (완성 예정)</dd><dt>역할</dt><dd>팀장 · 기획·협업(GitHub)·배포(Render)</dd><dt>범위</dt><dd>기능 구현은 팀원과 나눠 맡음</dd></dl>
-      <div class="insight">💡 AI가 취재 자료에 없는 발언을 기사에 넣지 않도록 막았습니다.</div>
-      <div class="btns"><a class="btn primary" href="https://a-team-press-cms.onrender.com" target="_blank" rel="noopener">배포 사이트 보기 →</a><a class="btn" href="https://github.com/INTP-ENFJ/A-TEAM" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://goalbangg-prog.github.io/PRESS-CMS-V4/" target="_blank" rel="noopener">발표자료</a></div>
+      <dl class="info-box"><dt>기간</dt><dd>2026.09.17 – 2026.11.11 (최종 발표)</dd><dt>역할</dt><dd>조장 · 기획 · 기술 선정(Supabase · TipTap) · 편집기 방향 결정 · 저장소·배포(GitHub → Render) · 발표 자료 · 문서</dd><dt>범위</dt><dd>화면·서버·AI 기능 구현과 시험 48건은 팀원 담당</dd></dl>
+      <div class="insight">💡 AI가 취재 자료에 없는 발언을 넣지 않도록 지시문에 "하지 마라"를 적고, 로고·실존 인물 요청은 AI에 보내기 전에 코드로 막았습니다.</div>
+      <div class="btns"><a class="btn primary" href="https://a-team-press-cms.onrender.com" target="_blank" rel="noopener">배포 사이트 보기 →</a><a class="btn" href="https://github.com/INTP-ENFJ/A-TEAM" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://github.com/INTP-ENFJ/A-TEAM/blob/main/docs/presentation/PRESS-CMS_%EC%B5%9C%EC%A2%85%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf" target="_blank" rel="noopener">발표자료 (PDF 43장)</a></div>
     </div>
     <div class="project-visual fade">
       <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>a-team-press-cms.onrender.com</span></div>
-        <div class="screen" style="background:#0f172a">
-          <div class="shot active"><img src="img/press-hero.jpg" alt="PRESS-CMS 발표자료 첫 화면"></div>
-          <div class="shot"><img src="img/press-editor.jpg" alt="기사 편집과 문장별 피드백" loading="lazy"></div>
-          <div class="shot"><img src="img/press-review.jpg" alt="AI 검수 화면" loading="lazy"></div>
+        <div class="screen" style="background:#0d1c30">
+          <div class="shot active"><img src="img/press-hero.jpg" alt="PRESS-CMS 최종 발표 자료 표지"></div>
           <div class="shot"><img src="img/press-dash.jpg" alt="업무 대시보드" loading="lazy"></div>
+          <div class="shot"><img src="img/press-editor.jpg" alt="워드형 편집기와 사진 삽입" loading="lazy"></div>
+          <div class="shot"><img src="img/press-review.jpg" alt="AI 검수 화면" loading="lazy"></div>
+          <div class="shot"><img src="img/press-feedback.jpg" alt="데스크 피드백" loading="lazy"></div>
+          <div class="shot"><img src="img/press-ai.jpg" alt="AI 처리 과정" loading="lazy"></div>
         </div>
       </div>
-      <div class="tabs"><button class="tab active">발표자료</button><button class="tab">기사 편집 · 피드백</button><button class="tab">AI 검수</button><button class="tab">대시보드</button></div>
+      <div class="tabs"><button class="tab active">발표자료</button><button class="tab">대시보드</button><button class="tab">편집기</button><button class="tab">AI 검수</button><button class="tab">피드백</button><button class="tab">AI 처리 과정</button></div>
     </div>
   </div>
 </section>
