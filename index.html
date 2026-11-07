@@ -262,7 +262,10 @@ main{margin-left:210px}
 .map-card i{font-style:normal;font-size:13px;font-weight:800;color:var(--blue-2)}
 .info3{margin-top:40px}
 .next-hint{padding:34px 0 46px;text-align:center;font-size:14px;font-weight:700;color:var(--ink-3);border-bottom:1px solid var(--line)}
-.next-hint b{color:var(--blue-2)}
+.next-hint b,.prev-hint b{color:var(--blue-2)}
+.prev-hint{font-size:12.5px;font-weight:700;color:var(--ink-4);margin:-30px 0 22px}
+.prev-hint .bar{width:120px;height:3px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.prev-hint .bar i{display:block;height:100%;width:0;background:var(--blue-2);transition:width .15s}
 .next-hint .bar{width:180px;height:4px;border-radius:4px;background:var(--line);margin:12px auto 0;overflow:hidden}
 .next-hint .bar i{display:block;height:100%;width:0;background:var(--blue-2);transition:width .15s}
 </style>
@@ -830,7 +833,9 @@ main{margin-left:210px}
     showTab(cat);
     const target = document.getElementById(id);
     const isHead = !target || target.id === cat || id === 'about';
-    window.scrollTo({top: isHead ? 0 : target.offsetTop, behavior: 'instant'});
+    const top = landBottom ? document.documentElement.scrollHeight : (isHead ? 0 : target.offsetTop);
+    landBottom = false;
+    window.scrollTo({top, behavior: 'instant'});
     spy();
   }
   function spy(){
@@ -839,42 +844,79 @@ main{margin-left:210px}
     document.querySelectorAll('main .section:not(.hide)').forEach(s => { if (s.offsetTop <= y) cur = s.id; });
     subLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
   }
-  /* keep scrolling at the end of a tab -> next tab */
+  /* keep scrolling past the end (or top) of a tab -> next (or previous) tab */
   const ORDER = ['about', ...tabLinks.map(a => a.dataset.tab).filter(t => t !== 'about')];
   const TITLE = {}; tabLinks.forEach(a => TITLE[a.dataset.tab] = a.textContent.replace(/^\d+/, '').trim());
-  const hints = {};
-  ORDER.slice(0, -1).forEach((cat, i) => {
-    const last = blocks.filter(b => b.dataset.cat === cat).pop();
-    const h = document.createElement('div');
-    h.className = 'next-hint'; h.dataset.cat = cat;
-    h.innerHTML = '↓ 계속 내리면 다음 탭 · <b>' + TITLE[ORDER[i + 1]] + '</b><div class="bar"><i></i></div>';
-    last.after(h); blocks.push(h); hints[cat] = h;
+  const hints = {}, ups = {};
+  ORDER.forEach((cat, i) => {
+    if (i < ORDER.length - 1){
+      const last = blocks.filter(b => b.dataset.cat === cat).pop();
+      const h = document.createElement('div');
+      h.className = 'next-hint'; h.dataset.cat = cat;
+      h.innerHTML = '↓ 계속 내리면 다음 탭 · <b>' + TITLE[ORDER[i + 1]] + '</b><div class="bar"><i></i></div>';
+      last.after(h); blocks.push(h); hints[cat] = h;
+    }
+    if (i > 0){
+      const head = document.getElementById(cat);
+      const u = document.createElement('div');
+      u.className = 'prev-hint';
+      u.innerHTML = '↑ 계속 올리면 이전 탭 · <b>' + TITLE[ORDER[i - 1]] + '</b><div class="bar"><i></i></div>';
+      head.querySelector('.section-inner').prepend(u); ups[cat] = u;
+    }
   });
-  let pull = 0, lock = false;
-  const NEED = 320;
+  const NEED = 360;
+  let pull = 0, armed = 0, lock = false, lastInput = 0, landBottom = false;
   const atBottom = () => window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
-  function setBar(){ const h = hints[current]; if (h) h.querySelector('.bar i').style.width = Math.min(100, pull / NEED * 100) + '%'; }
-  function goNext(){
-    const i = ORDER.indexOf(current);
-    if (i < 0 || i >= ORDER.length - 1) return;
-    lock = true; pull = 0; setBar();
-    location.hash = '#' + ORDER[i + 1];
+  const atTop = () => window.scrollY <= 2;
+  function setBar(){
+    Object.values(hints).forEach(h => h.querySelector('.bar i').style.width = '0%');
+    Object.values(ups).forEach(h => h.querySelector('.bar i').style.width = '0%');
+    const el = armed > 0 ? hints[current] : armed < 0 ? ups[current] : null;
+    if (el) el.querySelector('.bar i').style.width = Math.min(100, pull / NEED * 100) + '%';
+  }
+  function reset(){ pull = 0; armed = 0; setBar(); }
+  function go(step){
+    const i = ORDER.indexOf(current) + step;
+    if (i < 0 || i >= ORDER.length) return;
+    reset(); lock = true;
+    landBottom = step < 0;
+    location.hash = '#' + ORDER[i];
     const t0 = Date.now();
-    const release = () => { if (Date.now() - t0 > 900 && Date.now() - lastWheel > 400) lock = false; else setTimeout(release, 100); };
-    setTimeout(release, 100);
+    const release = () => {
+      const quiet = Date.now() - lastInput > 220, long = Date.now() - t0 > 1100;
+      if ((Date.now() - t0 > 450 && quiet) || long) lock = false; else setTimeout(release, 60);
+    };
+    setTimeout(release, 60);
   }
-  let lastWheel = 0;
-  function push(d){
-    if (lock || !hints[current]) return;
-    if (d > 0 && atBottom()){ pull += d; setBar(); if (pull >= NEED) goNext(); }
-    else if (d < 0 && pull){ pull = 0; setBar(); }
+  /* d > 0 = down. newGesture = input began after a pause (not leftover momentum) */
+  function input(d, newGesture){
+    if (lock) return;
+    if (d > 0){
+      if (!hints[current] || !atBottom()){ if (armed) reset(); return; }
+      if (armed !== 1){ if (!newGesture) return; armed = 1; pull = 0; }
+      pull += d; setBar(); if (pull >= NEED) go(1);
+    } else if (d < 0){
+      if (!ups[current] || !atTop()){ if (armed) reset(); return; }
+      if (armed !== -1){ if (!newGesture) return; armed = -1; pull = 0; }
+      pull -= d; setBar(); if (pull >= NEED) go(-1);
+    }
   }
-  window.addEventListener('wheel', e => { lastWheel = Date.now(); if (lock){ e.preventDefault(); return; } push(e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY); }, {passive:false});
-  let ty = null;
-  window.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, {passive:true});
-  window.addEventListener('touchmove', e => { if (ty === null) return; const y = e.touches[0].clientY; push((ty - y) * 2); ty = y; }, {passive:true});
-  window.addEventListener('keydown', e => { if (['PageDown','ArrowDown',' ','End'].includes(e.key) && atBottom()) push(NEED / 2); });
-  window.addEventListener('scroll', () => { if (!atBottom() && pull){ pull = 0; setBar(); } }, {passive:true});
+  window.addEventListener('wheel', e => {
+    const now = Date.now(), gap = now - lastInput; lastInput = now;
+    if (lock){ e.preventDefault(); return; }
+    input(e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY, gap > 250);
+  }, {passive:false});
+  let ty = null, fresh = false;
+  window.addEventListener('touchstart', e => { ty = e.touches[0].clientY; fresh = true; }, {passive:true});
+  window.addEventListener('touchmove', e => {
+    if (ty === null) return; const y = e.touches[0].clientY; lastInput = Date.now();
+    input((ty - y) * 2, fresh); fresh = false; ty = y;
+  }, {passive:true});
+  window.addEventListener('keydown', e => {
+    if (['PageDown','ArrowDown',' ','End'].includes(e.key) && atBottom()) input(NEED / 2, true);
+    if (['PageUp','ArrowUp','Home'].includes(e.key) && atTop()) input(-NEED / 2, true);
+  });
+  window.addEventListener('scroll', () => { if (armed && !atBottom() && !atTop()) reset(); }, {passive:true});
 
   window.addEventListener('hashchange', route);
   window.addEventListener('scroll', spy, {passive:true});
