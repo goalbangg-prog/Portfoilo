@@ -235,27 +235,54 @@ main{margin-left:210px}
 .fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
 .fade.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.fade{opacity:1;transform:none}}
+
+/* ---------- TABS ---------- */
+.tabs-nav .tab-link{font-weight:800;color:var(--ink)}
+.tabs-nav .tab-link em{font-style:normal;font-size:11.5px;font-weight:900;color:var(--ink-4);margin-right:-2px}
+.tabs-nav .tab-link::before{display:none}
+.tabs-nav .tab-link.on{background:var(--sky-soft);color:var(--sky-ink);border-left-color:var(--sky)}
+.tabs-nav .tab-link.on em{color:var(--sky-d)}
+.tabs-nav .sub{display:none;margin:2px 0 8px 14px;border-left:1px solid var(--line-2);padding-left:6px}
+.tabs-nav .sub.open{display:block}
+.tabs-nav .sub a{font-size:13px;font-weight:600;padding:5px 10px;color:var(--ink-3)}
+.tabs-nav .sub a.on{background:none;color:var(--sky-ink);border-left-color:transparent}
+[data-cat].hide{display:none!important}
+.cat-head{padding:64px 0 40px;border-bottom:1px solid var(--line);background:var(--soft)}
+.cat-title{font-size:44px;font-weight:900;letter-spacing:-.02em;line-height:1.2;margin-top:10px;color:#0b1f4d}
+.cat-desc{font-size:17px;color:var(--ink-2);margin-top:10px}
+.cat-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.cat-chips a{font-size:13.5px;font-weight:700;padding:6px 14px;border-radius:999px;border:1px solid var(--line-2);background:#fff;color:var(--ink-2)}
+.cat-chips a:hover{border-color:var(--blue-2);color:var(--blue-2)}
+.map{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.map-card{display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff;transition:.2s}
+.map-card:hover{border-color:var(--blue-2);box-shadow:0 14px 30px -18px rgba(37,99,235,.5)}
+.map-card .no{font-size:12px;font-weight:900;color:var(--sky-d);letter-spacing:.1em}
+.map-card b{font-size:17px}
+.map-card small{font-size:13px;color:var(--ink-3);line-height:1.55;flex:1}
+.map-card i{font-style:normal;font-size:13px;font-weight:800;color:var(--blue-2)}
+.info3{margin-top:40px}
+.next-hint{padding:34px 0 46px;text-align:center;font-size:14px;font-weight:700;color:var(--ink-3);border-bottom:1px solid var(--line)}
+.next-hint b{color:var(--blue-2)}
+.next-hint .bar{width:180px;height:4px;border-radius:4px;background:var(--line);margin:12px auto 0;overflow:hidden}
+.next-hint .bar i{display:block;height:100%;width:0;background:var(--blue-2);transition:width .15s}
 </style>
 </head>
 <body>
 
 <aside class="sidebar">
   <a class="logo" href="#about">SUHYUN.<span>PORTFOLIO</span></a>
-  <div class="side-label">PROJECTS</div>
-  <nav class="side-nav">
-    <a href="#project1">BMW 생애주기 LCA</a>
-    <a href="#project2">EPD 평가계수 점검</a>
-    <a href="#project9">Scope 0 · 기준서부터</a>
-    <a href="#project3">IPCC 연구용역</a>
-    <a href="#project4">K-ETS 비용 최적화</a>
-    <a href="#project5">NGMS Copilot</a>
-    <a href="#project7">논문·학술 발표</a>
-    <a href="#project8">LEAP 모형 실습</a>
-    <a href="#project6">PRESS-CMS</a>
-    <a href="#more">기타 프로젝트</a>
+  <div class="side-label">PORTFOLIO</div>
+  <nav class="side-nav tabs-nav">
+    <a class="tab-link" href="#about" data-tab="about">About Me</a>
+    <a class="tab-link" href="#lca" data-tab="lca"><em>01</em>LCA · 제품 탄소</a>
+    <div class="sub" data-sub="lca"><a href="#project1">BMW 생애주기 LCA</a><a href="#project2">EPD 평가계수 점검</a></div>
+    <a class="tab-link" href="#disclosure" data-tab="disclosure"><em>02</em>기후공시 · 규제대응</a>
+    <div class="sub" data-sub="disclosure"><a href="#project9">Scope 0 · 기준서부터</a><a href="#project4">K-ETS 비용 최적화</a><a href="#project5">NGMS Copilot</a></div>
+    <a class="tab-link" href="#research" data-tab="research"><em>03</em>연구 · 연구용역</a>
+    <div class="sub" data-sub="research"><a href="#project3">IPCC 연구용역</a><a href="#project7">논문·학술 발표</a><a href="#project8">LEAP 모형 실습</a></div>
+    <a class="tab-link" href="#dev" data-tab="dev"><em>04</em>AI · 웹 개발</a>
+    <div class="sub" data-sub="dev"><a href="#project6">PRESS-CMS</a><a href="#more">기타 프로젝트</a></div>
   </nav>
-  <div class="side-label">MORE</div>
-  <nav class="side-nav"><a href="#about">About Me</a></nav>
   <div class="side-foot">
     <a href="mailto:goalbangg@naver.com">goalbangg@naver.com</a>
     <a href="https://github.com/goalbangg-prog" target="_blank" rel="noopener">github.com/goalbangg-prog</a>
@@ -265,7 +292,7 @@ main{margin-left:210px}
 <main>
 
 <!-- ABOUT -->
-<section class="section" id="about">
+<section class="section" id="about" data-cat="about">
   <div class="section-inner">
     <div class="label">ABOUT ME</div>
     <div class="about-top">
@@ -278,6 +305,9 @@ main{margin-left:210px}
       </div>
     </div>
 
+
+    <div class="skills-title">PORTFOLIO MAP</div>
+    <div class="map"><a class="map-card" href="#lca"><span class="no">01</span><b>LCA · 제품 탄소</b><small>BMW 생애주기 LCA · EPD 평가계수 점검</small><i>보기 →</i></a><a class="map-card" href="#disclosure"><span class="no">02</span><b>기후공시 · 규제대응</b><small>Scope 0 · 기준서부터 · K-ETS 비용 최적화 · NGMS Copilot</small><i>보기 →</i></a><a class="map-card" href="#research"><span class="no">03</span><b>연구 · 연구용역</b><small>IPCC 연구용역 · 논문·학술 발표 · LEAP 모형 실습</small><i>보기 →</i></a><a class="map-card" href="#dev"><span class="no">04</span><b>AI · 웹 개발</b><small>PRESS-CMS · 기타 프로젝트</small><i>보기 →</i></a></div>
     <div class="info3">
       <div>
         <h4>CONTACT</h4>
@@ -332,11 +362,20 @@ main{margin-left:210px}
   </div>
 </section>
 
+<!-- TAB 1 lca -->
+<div class="cat-head" id="lca" data-cat="lca">
+  <div class="section-inner">
+    <div class="label">TAB 1 / 4</div>
+    <h2 class="cat-title">LCA · 제품 탄소</h2>
+    <p class="cat-desc">제품 하나의 생애주기 배출량을 직접 계산하고, 계산에 쓰는 데이터부터 점검합니다.</p>
+    <div class="cat-chips"><a href="#project1">BMW 생애주기 LCA</a><a href="#project2">EPD 평가계수 점검</a></div>
+  </div>
+</div>
 <!-- PROJECT 01 BMW -->
-<section class="section" id="project1">
+<section class="section" id="project1" data-cat="lca">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 01 · PERSONAL PROJECT · 2026</div>
+      <div class="project-meta">PERSONAL PROJECT · 2026</div>
       <h3 class="project-title">BMW 5시리즈<br>생애주기 온실가스 분석</h3>
       <div class="stack-line">Python + Pandas + 국가 LCI DB + GHG Protocol + WBCSD</div>
       <p class="project-desc">BMW 5시리즈의 생애주기 온실가스 배출량을 계산하고,<br>그 결과를 Scope 3와 회피배출 관점에서 분석했습니다.</p>
@@ -370,10 +409,10 @@ main{margin-left:210px}
 </section>
 
 <!-- PROJECT 02 EPD -->
-<section class="section" id="project2">
+<section class="section" id="project2" data-cat="lca">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 02 · DATA ANALYSIS · 2026</div>
+      <div class="project-meta">DATA ANALYSIS · 2026</div>
       <h3 class="project-title">EPD 평가계수<br>398건 점검</h3>
       <div class="stack-line">Python + Pandas + SciPy + JavaScript</div>
       <p class="project-desc">KEITI의 2021년 EPD 평가계수를 전수 점검해,<br>원본 대조가 필요한 값을 찾았습니다.</p>
@@ -406,11 +445,20 @@ main{margin-left:210px}
   </div>
 </section>
 
+<!-- TAB 2 disclosure -->
+<div class="cat-head" id="disclosure" data-cat="disclosure">
+  <div class="section-inner">
+    <div class="label">TAB 2 / 4</div>
+    <h2 class="cat-title">기후공시 · 규제대응</h2>
+    <p class="cat-desc">기준서와 배출권 제도를 읽고, 실무에 쓸 수 있는 도구로 만듭니다.</p>
+    <div class="cat-chips"><a href="#project9">Scope 0 · 기준서부터</a><a href="#project4">K-ETS 비용 최적화</a><a href="#project5">NGMS Copilot</a></div>
+  </div>
+</div>
 <!-- PROJECT 03 SCOPE 0 -->
-<section class="section" id="project9">
+<section class="section" id="project9" data-cat="disclosure">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 03 · READING LOG · 2026 · 진행 중</div>
+      <div class="project-meta">READING LOG · 2026 · 진행 중</div>
       <h3 class="project-title">Scope 0<br>기준서부터</h3>
       <div class="stack-line">KSSB · IFRS S1·S2 · GHG Protocol(기업·Scope 3) · ISO 14040/44/27 · EU 배터리법·CBAM·ESPR·PPWR · K-ETS·목표관리 고시 + pdf.js</div>
       <p class="project-desc">기후공시·온실가스·LCA·EU 규제 기준서를 원문 PDF로 읽는 공간입니다.<br>원문 목차대로 나누고, 막힌 곳은 원문에서 근거를 찾습니다.</p>
@@ -444,11 +492,89 @@ main{margin-left:210px}
   </div>
 </section>
 
-<!-- PROJECT 04 IPCC -->
-<section class="section" id="project3">
+<!-- PROJECT 05 K-ETS -->
+<section class="section" id="project4" data-cat="disclosure">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 04 · RESEARCH SERVICE · 2025</div>
+      <div class="project-meta">AUTOMATION · 2026</div>
+      <h3 class="project-title">K-ETS Compliance<br>&amp; Cost Optimizer</h3>
+      <div class="stack-line">n8n + JavaScript + Google Drive + Google Docs + AI</div>
+      <p class="project-desc">배출권 구입과 감축기술 개발을 비교하여 최소 이행비용을 찾고,<br>의사결정 보고서를 자동으로 생성합니다.</p>
+      <div class="figures">
+        <div class="fig"><div class="n">5<small>개</small></div><div class="l">비교 시나리오</div></div>
+        <div class="fig"><div class="n">3.6<small>억 원</small></div><div class="l">시나리오 간<br>이행비용 차이</div></div>
+      </div>
+      <ul class="point-box">
+        <li>법령·고시·할당계획을 <b>Rule Table</b>로 관리</li>
+        <li>KAU·KCU·KOC <b>적격성 판정</b>, 상쇄 한도 적용</li>
+        <li>감축과 구매를 같은 기준으로 <b>최소비용 조합</b> 계산</li>
+        <li>AI는 계산 결과 설명만 → Google Docs 보고서</li>
+      </ul>
+      <dl class="info-box"><dt>형태</dt><dd>n8n 워크플로 MVP (가상 기업 데이터)</dd><dt>역할</dt><dd>1인 설계·구현</dd></dl>
+      <div class="insight">💡 배출권거래제, 할당계획, 빈티지, 한계감축비용을 모두 고려했습니다.</div>
+      <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/K-ETS-Compliance-Cost-Optimizer-3cca892fe8d6813d879ce97daea02eef" target="_blank" rel="noopener">Notion 보기 →</a></div>
+    </div>
+    <div class="project-visual fade">
+      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>n8n · 전체 워크플로 노드</span></div>
+        <div class="screen free"><img src="img/kets-workflow.jpg" alt="K-ETS n8n 전체 워크플로 노드" class="zoom"></div>
+      </div>
+      <div class="duo" style="grid-template-columns:1fr 1fr">
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>Google Docs · 자동 생성 보고서</span></div>
+          <div class="screen fixed"><img src="img/kets-report.jpg" alt="자동 생성된 K-ETS 의사결정 보고서" class="zoom"></div></div>
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>시나리오별 최소 이행비용 (가상 입력)</span></div>
+          <div class="screen fixed chartbox"><svg id="ketsChart" viewBox="0 0 760 300" role="img" aria-label="시나리오별 이행비용"></svg></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 06 NGMS -->
+<section class="section" id="project5" data-cat="disclosure">
+  <div class="section-inner project-layout">
+    <div class="fade">
+      <div class="project-meta">AI TOOL · 2026</div>
+      <h3 class="project-title">NGMS Manual Copilot</h3>
+      <div class="stack-line">Google Opal + Gemini 3 Flash + Excel + Markdown</div>
+      <p class="project-desc">국가온실가스종합관리시스템(NGMS) 사용법을 물으면,<br>메뉴 경로와 업무 시 주의사항까지 알려주는 도구입니다.</p>
+      <div class="figures">
+        <div class="fig"><div class="n">654<small>건</small></div><div class="l">공식 매뉴얼 5종으로<br>만든 Q&amp;A</div></div>
+        <div class="fig"><div class="n">476<small>건</small></div><div class="l">검수를 통과한<br>Q&amp;A 데이터만 연결</div></div>
+      </div>
+      <ul class="point-box">
+        <li>PDF를 질문·답변·메뉴 경로·출처 페이지로 <b>구조화</b></li>
+        <li>중복·충돌·출처 불일치 <b>검수</b> → 178건 제외</li>
+        <li>안내 노드 + 검수 노드 2단계 구성</li>
+        <li>지식 밖 질문은 '확인 불가'로 답하도록 설정</li>
+      </ul>
+      <dl class="info-box"><dt>역할</dt><dd>1인 설계·데이터 구축·구현</dd><dt>도구</dt><dd>Google Opal · Gemini · Excel</dd></dl>
+      <div class="insight">💡 AI 답의 품질은 모델보다 넣는 자료의 검수에서 갈립니다.</div>
+      <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/NGMS-Manual-Copilot-3caa892fe8d68127bd0efee6a8ceca75" target="_blank" rel="noopener">Notion 보기 →</a></div>
+    </div>
+    <div class="project-visual fade">
+      <div class="duo" style="grid-template-columns:.62fr 1fr;margin-top:0">
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>답변 화면</span></div>
+          <div class="screen tall dark"><img src="img/ngms-answer.jpg" alt="NGMS Copilot 답변 화면" class="zoom"></div></div>
+        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>Google Opal · 노드 구성</span></div>
+          <div class="screen tall dark"><img src="img/ngms-workflow.jpg" alt="Google Opal 노드 구성 화면" class="zoom"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAB 3 research -->
+<div class="cat-head" id="research" data-cat="research">
+  <div class="section-inner">
+    <div class="label">TAB 3 / 4</div>
+    <h2 class="cat-title">연구 · 연구용역</h2>
+    <p class="cat-desc">연구용역을 제안부터 운영까지 맡았고, 학술 연구와 모형 실습을 했습니다.</p>
+    <div class="cat-chips"><a href="#project3">IPCC 연구용역</a><a href="#project7">논문·학술 발표</a><a href="#project8">LEAP 모형 실습</a></div>
+  </div>
+</div>
+<!-- PROJECT 04 IPCC -->
+<section class="section" id="project3" data-cat="research">
+  <div class="section-inner project-layout">
+    <div class="fade">
+      <div class="project-meta">RESEARCH SERVICE · 2025</div>
       <h3 class="project-title">기상청 2025년<br>IPCC 대응 방안 연구</h3>
       <div class="stack-line">세종대학교 기후환경융합센터 · 연구원</div>
       <p class="project-desc">제안서 작성, 나라장터 입찰, 계약, 수행까지<br>폭넓은 연구행정 실무를 경험했습니다.</p>
@@ -497,80 +623,11 @@ main{margin-left:210px}
   </div>
 </section>
 
-<!-- PROJECT 05 K-ETS -->
-<section class="section" id="project4">
-  <div class="section-inner project-layout">
-    <div class="fade">
-      <div class="project-meta">PROJECT 05 · AUTOMATION · 2026</div>
-      <h3 class="project-title">K-ETS Compliance<br>&amp; Cost Optimizer</h3>
-      <div class="stack-line">n8n + JavaScript + Google Drive + Google Docs + AI</div>
-      <p class="project-desc">배출권 구입과 감축기술 개발을 비교하여 최소 이행비용을 찾고,<br>의사결정 보고서를 자동으로 생성합니다.</p>
-      <div class="figures">
-        <div class="fig"><div class="n">5<small>개</small></div><div class="l">비교 시나리오</div></div>
-        <div class="fig"><div class="n">3.6<small>억 원</small></div><div class="l">시나리오 간<br>이행비용 차이</div></div>
-      </div>
-      <ul class="point-box">
-        <li>법령·고시·할당계획을 <b>Rule Table</b>로 관리</li>
-        <li>KAU·KCU·KOC <b>적격성 판정</b>, 상쇄 한도 적용</li>
-        <li>감축과 구매를 같은 기준으로 <b>최소비용 조합</b> 계산</li>
-        <li>AI는 계산 결과 설명만 → Google Docs 보고서</li>
-      </ul>
-      <dl class="info-box"><dt>형태</dt><dd>n8n 워크플로 MVP (가상 기업 데이터)</dd><dt>역할</dt><dd>1인 설계·구현</dd></dl>
-      <div class="insight">💡 배출권거래제, 할당계획, 빈티지, 한계감축비용을 모두 고려했습니다.</div>
-      <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/K-ETS-Compliance-Cost-Optimizer-3cca892fe8d6813d879ce97daea02eef" target="_blank" rel="noopener">Notion 보기 →</a></div>
-    </div>
-    <div class="project-visual fade">
-      <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>n8n · 전체 워크플로 노드</span></div>
-        <div class="screen free"><img src="img/kets-workflow.jpg" alt="K-ETS n8n 전체 워크플로 노드" class="zoom"></div>
-      </div>
-      <div class="duo" style="grid-template-columns:1fr 1fr">
-        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>Google Docs · 자동 생성 보고서</span></div>
-          <div class="screen fixed"><img src="img/kets-report.jpg" alt="자동 생성된 K-ETS 의사결정 보고서" class="zoom"></div></div>
-        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>시나리오별 최소 이행비용 (가상 입력)</span></div>
-          <div class="screen fixed chartbox"><svg id="ketsChart" viewBox="0 0 760 300" role="img" aria-label="시나리오별 이행비용"></svg></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECT 06 NGMS -->
-<section class="section" id="project5">
-  <div class="section-inner project-layout">
-    <div class="fade">
-      <div class="project-meta">PROJECT 06 · AI TOOL · 2026</div>
-      <h3 class="project-title">NGMS Manual Copilot</h3>
-      <div class="stack-line">Google Opal + Gemini 3 Flash + Excel + Markdown</div>
-      <p class="project-desc">국가온실가스종합관리시스템(NGMS) 사용법을 물으면,<br>메뉴 경로와 업무 시 주의사항까지 알려주는 도구입니다.</p>
-      <div class="figures">
-        <div class="fig"><div class="n">654<small>건</small></div><div class="l">공식 매뉴얼 5종으로<br>만든 Q&amp;A</div></div>
-        <div class="fig"><div class="n">476<small>건</small></div><div class="l">검수를 통과한<br>Q&amp;A 데이터만 연결</div></div>
-      </div>
-      <ul class="point-box">
-        <li>PDF를 질문·답변·메뉴 경로·출처 페이지로 <b>구조화</b></li>
-        <li>중복·충돌·출처 불일치 <b>검수</b> → 178건 제외</li>
-        <li>안내 노드 + 검수 노드 2단계 구성</li>
-        <li>지식 밖 질문은 '확인 불가'로 답하도록 설정</li>
-      </ul>
-      <dl class="info-box"><dt>역할</dt><dd>1인 설계·데이터 구축·구현</dd><dt>도구</dt><dd>Google Opal · Gemini · Excel</dd></dl>
-      <div class="insight">💡 AI 답의 품질은 모델보다 넣는 자료의 검수에서 갈립니다.</div>
-      <div class="btns"><a class="btn primary" href="https://honeysuckle-rose-a94.notion.site/NGMS-Manual-Copilot-3caa892fe8d68127bd0efee6a8ceca75" target="_blank" rel="noopener">Notion 보기 →</a></div>
-    </div>
-    <div class="project-visual fade">
-      <div class="duo" style="grid-template-columns:.62fr 1fr;margin-top:0">
-        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>답변 화면</span></div>
-          <div class="screen tall dark"><img src="img/ngms-answer.jpg" alt="NGMS Copilot 답변 화면" class="zoom"></div></div>
-        <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i><span>Google Opal · 노드 구성</span></div>
-          <div class="screen tall dark"><img src="img/ngms-workflow.jpg" alt="Google Opal 노드 구성 화면" class="zoom"></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PROJECT 07 PAPERS -->
-<section class="section" id="project7">
+<section class="section" id="project7" data-cat="research">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 07 · RESEARCH · 2025</div>
+      <div class="project-meta">RESEARCH · 2025</div>
       <h3 class="project-title">토픽모델링으로 본<br>국내 기후 연구 동향</h3>
       <div class="stack-line">NetMiner4 + LDA 토픽모델링 + KCI 논문 데이터</div>
       <p class="project-desc">학술지 논문 제2저자, 학술대회 포스터 제1저자로 참여했습니다.</p>
@@ -600,10 +657,10 @@ main{margin-left:210px}
 </section>
 
 <!-- PROJECT 08 LEAP -->
-<section class="section" id="project8">
+<section class="section" id="project8" data-cat="research">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 08 · CLASS EXERCISE · 2025</div>
+      <div class="project-meta">CLASS EXERCISE · 2025</div>
       <h3 class="project-title">LEAP 에너지·온실가스<br>모형 실습</h3>
       <div class="stack-line">LEAP (Low Emissions Analysis Platform)</div>
       <p class="project-desc">기후변화모형연구 수업에서 가정·산업 부문의 에너지 수요 구조를 구성하고 2050년까지 전망했습니다.</p>
@@ -627,11 +684,20 @@ main{margin-left:210px}
   </div>
 </section>
 
+<!-- TAB 4 dev -->
+<div class="cat-head" id="dev" data-cat="dev">
+  <div class="section-inner">
+    <div class="label">TAB 4 / 4</div>
+    <h2 class="cat-title">AI · 웹 개발</h2>
+    <p class="cat-desc">팀 프로젝트로 웹 서비스를 만들어 배포했습니다.</p>
+    <div class="cat-chips"><a href="#project6">PRESS-CMS</a><a href="#more">기타 프로젝트</a></div>
+  </div>
+</div>
 <!-- PROJECT 09 PRESS-CMS -->
-<section class="section" id="project6">
+<section class="section" id="project6" data-cat="dev">
   <div class="section-inner project-layout">
     <div class="fade">
-      <div class="project-meta">PROJECT 09 · TEAM PROJECT (2명) · 2026.09 – 2026.11</div>
+      <div class="project-meta">TEAM PROJECT (2명) · 2026.09 – 2026.11</div>
       <h3 class="project-title">PRESS-CMS</h3>
       <div class="stack-line">React 19 + TypeScript + TipTap + Supabase(PostgreSQL · RLS · Edge Functions 12) + Gemini · OpenAI · Claude + Render</div>
       <p class="project-desc">기자가 쓰고, 데스크가 검토하고, 부장이 출고하는<br>사내 기사 작성 시스템입니다. 현직 기자 의견 12건에서 출발했습니다.</p>
@@ -667,7 +733,7 @@ main{margin-left:210px}
 </section>
 
 <!-- MORE -->
-<section class="section" id="more">
+<section class="section" id="more" data-cat="dev">
   <div class="section-inner">
     <div class="project-meta">MORE PROJECTS</div>
     <h3 class="project-title">기타 프로젝트</h3>
@@ -743,16 +809,76 @@ main{margin-left:210px}
   lb.addEventListener('click', () => lb.classList.remove('open'));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 
-  /* sidebar active */
-  const links = [...document.querySelectorAll('.side-nav a')];
-  const secs = [...document.querySelectorAll('main .section')];
+  /* tabs + sidebar active */
+  const CAT = {};
+  document.querySelectorAll('main [data-cat]').forEach(el => CAT[el.id] = el.dataset.cat);
+  const blocks = [...document.querySelectorAll('main [data-cat]')];
+  const tabLinks = [...document.querySelectorAll('.tab-link')];
+  const subs = [...document.querySelectorAll('.tabs-nav .sub')];
+  const subLinks = [...document.querySelectorAll('.tabs-nav .sub a')];
+  let current = null;
+  function showTab(cat){
+    current = cat;
+    blocks.forEach(b => b.classList.toggle('hide', b.dataset.cat !== cat));
+    tabLinks.forEach(a => a.classList.toggle('on', a.dataset.tab === cat));
+    subs.forEach(s => s.classList.toggle('open', s.dataset.sub === cat));
+    if (typeof fit === 'function') fit();
+  }
+  function route(){
+    const id = decodeURIComponent(location.hash.slice(1)) || 'about';
+    const cat = CAT[id] || 'about';
+    showTab(cat);
+    const target = document.getElementById(id);
+    const isHead = !target || target.id === cat || id === 'about';
+    window.scrollTo({top: isHead ? 0 : target.offsetTop, behavior: 'instant'});
+    spy();
+  }
   function spy(){
     const y = window.scrollY + window.innerHeight * 0.45;
-    let cur = secs[0].id;
-    secs.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
-    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+    let cur = null;
+    document.querySelectorAll('main .section:not(.hide)').forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+    subLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
   }
-  spy(); window.addEventListener('scroll', spy, {passive:true});
+  /* keep scrolling at the end of a tab -> next tab */
+  const ORDER = ['about', ...tabLinks.map(a => a.dataset.tab).filter(t => t !== 'about')];
+  const TITLE = {}; tabLinks.forEach(a => TITLE[a.dataset.tab] = a.textContent.replace(/^\d+/, '').trim());
+  const hints = {};
+  ORDER.slice(0, -1).forEach((cat, i) => {
+    const last = blocks.filter(b => b.dataset.cat === cat).pop();
+    const h = document.createElement('div');
+    h.className = 'next-hint'; h.dataset.cat = cat;
+    h.innerHTML = '↓ 계속 내리면 다음 탭 · <b>' + TITLE[ORDER[i + 1]] + '</b><div class="bar"><i></i></div>';
+    last.after(h); blocks.push(h); hints[cat] = h;
+  });
+  let pull = 0, lock = false;
+  const NEED = 320;
+  const atBottom = () => window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+  function setBar(){ const h = hints[current]; if (h) h.querySelector('.bar i').style.width = Math.min(100, pull / NEED * 100) + '%'; }
+  function goNext(){
+    const i = ORDER.indexOf(current);
+    if (i < 0 || i >= ORDER.length - 1) return;
+    lock = true; pull = 0; setBar();
+    location.hash = '#' + ORDER[i + 1];
+    const t0 = Date.now();
+    const release = () => { if (Date.now() - t0 > 900 && Date.now() - lastWheel > 400) lock = false; else setTimeout(release, 100); };
+    setTimeout(release, 100);
+  }
+  let lastWheel = 0;
+  function push(d){
+    if (lock || !hints[current]) return;
+    if (d > 0 && atBottom()){ pull += d; setBar(); if (pull >= NEED) goNext(); }
+    else if (d < 0 && pull){ pull = 0; setBar(); }
+  }
+  window.addEventListener('wheel', e => { lastWheel = Date.now(); if (lock){ e.preventDefault(); return; } push(e.deltaMode === 1 ? e.deltaY * 30 : e.deltaY); }, {passive:false});
+  let ty = null;
+  window.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, {passive:true});
+  window.addEventListener('touchmove', e => { if (ty === null) return; const y = e.touches[0].clientY; push((ty - y) * 2); ty = y; }, {passive:true});
+  window.addEventListener('keydown', e => { if (['PageDown','ArrowDown',' ','End'].includes(e.key) && atBottom()) push(NEED / 2); });
+  window.addEventListener('scroll', () => { if (!atBottom() && pull){ pull = 0; setBar(); } }, {passive:true});
+
+  window.addEventListener('hashchange', route);
+  window.addEventListener('scroll', spy, {passive:true});
+  route();
 
   /* fade in */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
